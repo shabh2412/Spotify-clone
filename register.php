@@ -37,6 +37,7 @@
             <h2>Create Your Free Account</h2>
             <p>
                 <?php echo $account->getError(Constants::$usernameCharacterLength); ?>
+                <?php echo $account->getError( Constants::$usernameTaken); ?>
                 <label for="Username">Username</label>
                 <input type="text" name="Username" id="Username" placeholder="Ex: johnDoe" value = "<?php getInputValue('Username')?>" required>
             </p>
@@ -53,6 +54,7 @@
             <p>
                 <?php echo $account->getError( Constants::$emailDoNotMatch); ?>
                 <?php echo $account->getError( Constants::$emailInvalid); ?>
+                <?php echo $account->getError( Constants::$emailExists); ?>
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" placeholder="Ex: johnDoe@example.com" value = "<?php getInputValue('email')?>"  required>
             </p>

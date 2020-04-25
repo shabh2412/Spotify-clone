@@ -45,13 +45,19 @@
                 return;
             } 
             //TODO : check if username exists
+            $checkUserNameQuery = "SELECT username FROM users WHERE username = '$userName'";
+            $userNameResult =  mysqli_query($this->conn,$checkUserNameQuery);
+            if (mysqli_num_rows($userNameResult) != 0) {
+                array_push($this->errorArray, Constants::$usernameTaken);
+                return;
+            }
         }
         private function validateName($name){
             if(strlen($name) > 25 || strlen($name) < 2){
                 array_push($this->errorArray, Constants::$nameCharacterLength);
                 return;
             } 
-    
+            
         }
         private function validateEmail($em1 , $em2){
             if ($em1 != $em2) {
@@ -63,8 +69,14 @@
                     return;
                 }
                 // TODO : Check that email id hasn't already been used.
+                $checkEmailQuery = "SELECT email FROM users WHERE email = '$em1'";
+                $emailResult =  mysqli_query($this->conn,$checkEmailQuery);
+                if (mysqli_num_rows($emailResult) != 0) {
+                    array_push($this->errorArray, Constants::$emailExists);
+                    return;
+                }
             }
-
+            
         }
         private function validatePassword($pwd1, $pwd2){
             if($pwd1 != $pwd2) {
