@@ -15,18 +15,6 @@
         validateEmail($email,$email_conf);
         validatePassword($password, $password_conf);
     }
-    function validateUsername($username){
-
-    }
-    function validateName($name){
-
-    }
-    function validateEmail($em1 , $em2){
-
-    }
-    function validatePassword($pwd1, $pwd2){
-
-    }
     function purifyUsername($x)
     {
         $x = strip_tags($x);
