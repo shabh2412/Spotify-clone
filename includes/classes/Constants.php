@@ -1,6 +1,7 @@
 <?php class Constants {
 
     public static $passwordsDoNotMatch = "Both password need to match";
+    public static $passwordTooShort = "Password needs to be of at least 8 digits!";
     public static $passwordTooSimple = "Password needs to consist of a lowercase, uppercase, numeric and a \"! or ?\"";
     public static $emailInvalid = "Email is invalid";
     public static $emailDoNotMatch = "Both the email need to match";
