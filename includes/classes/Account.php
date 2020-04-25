@@ -21,6 +21,12 @@
                 return false;
             }
         }
+        public function getError($error) {
+            if (!in_array($error, $this->errorArray)) {
+                $error = "";
+            }
+            return "<span class = 'errorMessage'>$error</span>";
+        }
         private function validateUsername($userName){
             if(strlen($userName) > 25 || strlen($userName) < 5){
                 array_push($this->errorArray, "Your username must be between 5 and 25 characters");
@@ -54,7 +60,7 @@
                 return;
             } else {
                 if (!preg_match($this -> pwdVal, $pwd1)) {
-                    array_push( $this -> errorArray, "Password needs to consist of a lowercase, uppercase, numeric and a special character(\"! or ?\")");
+                    array_push( $this -> errorArray, "Password needs to consist of a lowercase, uppercase, numeric and a \"! or ?\"");
                 }
             }
         }
