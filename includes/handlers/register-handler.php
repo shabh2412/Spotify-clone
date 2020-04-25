@@ -9,7 +9,12 @@
         $password = purifyPassword($_POST['Password']);
         $password_conf = purifyPassword($_POST['Password-conf']);
 
-        $account -> register($userName, $firstName, $lastName, $email, $email_conf, $password, $password_conf);
+        $wasSuccessful = $account -> register($userName, $firstName, $lastName, $email, $email_conf, $password, $password_conf);
+        if ($wasSuccessful) {
+            header("location: index.php");
+        } else {
+            header("location: register.php");
+        }
 
     }
     function purifyUsername($x)
