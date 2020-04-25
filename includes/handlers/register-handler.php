@@ -8,24 +8,6 @@
         $email_conf = purifyInput($_POST['email_conf']);
         $password = purifyPassword($_POST['Password']);
         $password_conf = purifyPassword($_POST['Password-conf']);
-        
-        validateUsername($userName);
-        validateName($firstName);
-        validateName($lastName);
-        validateEmail($email,$email_conf);
-        validatePassword($password, $password_conf);
-    }
-    function validateUsername($username){
-
-    }
-    function validateName($name){
-
-    }
-    function validateEmail($em1 , $em2){
-
-    }
-    function validatePassword($pwd1, $pwd2){
-
     }
     function purifyUsername($x)
     {
