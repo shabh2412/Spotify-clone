@@ -33,8 +33,8 @@
             $encryptedPassWord = md5($password);
             $profilePic = "assets/images/profile-pics/basic-prof-pic.png";
             $date = date("Y-m-d");
-            
-            $result = mysqli_query($this->conn, "INSERT INTO `users` VALUES ('', '$userName', '$firstName', '$lastName', '$email', '$encryptedPassWord', '$date', '$profilePic')");
+            $sql = "INSERT INTO users (id, username, firstName, lastName, email, password, signupDate, profilePic) VALUES (NULL, '$userName', '$firstName', '$lastName', '$email', '$encryptedPassWord', '$date', '$profilePic')";
+            $result = mysqli_query($this->conn, $sql);
             return $result;
         }
 
