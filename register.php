@@ -1,39 +1,6 @@
 <?php
-    if(isset($_POST['loginButton'])){
-        // Login Button was pressed
-        
-    }
-    if(isset($_POST['registerButton'])){
-        // Register Button was pressed
-        $userName = purifyUsername($_POST['Username']);
-        $firstName = purifyInput($_POST['firstName']);
-        $lastName = purifyInput($_POST['lastName']);
-        $email = purifyInput($_POST['email']);
-        $email_conf = purifyInput($_POST['email_conf']);
-        $password = purifyPassword($_POST['Password']);
-        $password_conf = purifyPassword($_POST['Password-conf']);
-    }
-    function purifyUsername($x)
-    {
-        $x = strip_tags($x);
-        $x = str_replace(' ',"", $x);
-        $x = stripslashes($x);
-        $x = strtolower($x);
-        return $x;
-    }
-    function purifyPassword($x){
-        $x = stripslashes($x);
-        $x = strip_tags($x);
-        return $x;
-    }
-    function purifyInput($x){
-        $x = strip_tags($x);
-        $x = str_replace(' ',"", $x);
-        $x = stripslashes($x);
-        $x = strtolower($x);
-        $x = ucfirst($x);
-        return $x;
-    }
+    include('includes/handlers/register-handler.php');
+    include('includes/handlers/login-handler.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
