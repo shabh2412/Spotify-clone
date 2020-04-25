@@ -40,12 +40,12 @@
                 <input type="text" name="Username" id="Username" placeholder="Ex: johnDoe" value = "<?php getInputValue('Username')?>" required>
             </p>
             <p>
-                <?php echo $account->getError( Constants::$usernameCharacterLength); ?>
+                <?php echo $account->getError( Constants::$nameCharacterLength); ?>
                 <label for="firstName">First Name</label>
                 <input type="text" name="firstName" id="firstName" placeholder="Ex: John" value = "<?php getInputValue('firstName')?>" required>
             </p>
             <p>
-                <?php echo $account->getError( Constants::$usernameCharacterLength); ?>
+                <?php echo $account->getError( Constants::$nameCharacterLength); ?>
                 <label for="lastName">Last Name</label>
                 <input type="text" name="lastName" id="lastName" placeholder="Ex: Doe"  value = "<?php getInputValue('lastName')?>" required>
             </p>

@@ -13,7 +13,6 @@
             $this -> validateName($lastName);
             $this -> validateEmail($email,$email_conf);
             $this -> validatePassword($password, $password_conf);
-
             if (empty( $this -> errorArray )  ==  true) {
                 //Insert into DB
                 return true;
