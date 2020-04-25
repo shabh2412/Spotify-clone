@@ -1,9 +1,11 @@
 <?php
     class Account {
+        private $conn;
         private $emVal = '/^[a-zA-Z0-9_.-]+@[a-z.-]{3,16}\.[a-z]{2,5}/';
         private $pwdVal = '/(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[!?])[a-zA-Z0-9!?]{8,}/';
         private $errorArray;
-        public function __construct(){
+        public function __construct($conn){
+            $this->conn = $conn;
             $this -> errorArray = array();
         }
         public function register($userName,$firstName,$lastName,$email,$email_conf,$password,$password_conf)
@@ -15,7 +17,7 @@
             $this -> validatePassword($password, $password_conf);
             if (empty( $this -> errorArray )  ==  true) {
                 //Insert into DB
-                return true;
+                return $this -> insertUserDetails($userName, $firstName, $lastName, $email, $password);
             } else {
                 return false;
             }
@@ -26,6 +28,17 @@
             }
             return "<span class = 'errorMessage'>$error</span>";
         }
+        
+        private function insertUserDetails($userName, $firstName, $lastName, $email, $password) {
+            $encryptedPassWord = md5($password);
+            $profilePic = "assets/images/profile-pics/basic-prof-pic.png";
+            $date = date("Y-m-d");
+            
+            $result = mysqli_query($this->conn, "INSERT INTO `users` VALUES ('', '$userName', '$firstName', '$lastName', '$email', '$encryptedPassWord', '$date', '$profilePic')");
+            return $result;
+        }
+
+
         private function validateUsername($userName){
             if(strlen($userName) > 25 || strlen($userName) < 5){
                 array_push($this->errorArray, Constants::$usernameCharacterLength);
