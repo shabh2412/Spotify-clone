@@ -8,6 +8,9 @@
         $email_conf = purifyInput($_POST['email_conf']);
         $password = purifyPassword($_POST['Password']);
         $password_conf = purifyPassword($_POST['Password-conf']);
+
+        $account -> register($userName, $firstName, $lastName, $email, $email_conf, $password, $password_conf);
+
     }
     function purifyUsername($x)
     {
