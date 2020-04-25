@@ -12,8 +12,6 @@
         $wasSuccessful = $account -> register($userName, $firstName, $lastName, $email, $email_conf, $password, $password_conf);
         if ($wasSuccessful) {
             header("location: index.php");
-        } else {
-            header("location: register.php");
         }
 
     }
