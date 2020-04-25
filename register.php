@@ -29,18 +29,23 @@
         <form action="register.php" id="registerForm" method="POST">
             <h2>Create Your Free Account</h2>
             <p>
+                <?php echo $account->getError("Your username must be between 5 and 25 characters"); ?>
                 <label for="Username">Username</label>
                 <input type="text" name="Username" id="Username" placeholder="Ex: johnDoe" required>
             </p>
             <p>
+                <?php echo $account->getError("Your First and Last Name must be between 2 and 25 characters"); ?>
                 <label for="firstName">First Name</label>
                 <input type="text" name="firstName" id="firstName" placeholder="Ex: John" required>
             </p>
             <p>
+                <?php echo $account->getError("Your First and Last Name must be between 2 and 25 characters"); ?>
                 <label for="lastName">Last Name</label>
                 <input type="text" name="lastName" id="lastName" placeholder="Ex: Doe" required>
             </p>
             <p>
+                <?php echo $account->getError("Both the email need to match"); ?>
+                <?php echo $account->getError("Email is invalid"); ?>
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" placeholder="Ex: johnDoe@example.com" required>
             </p>
@@ -49,6 +54,8 @@
                 <input type="email" name="email_conf" id="email_conf" placeholder="Ex: johnDoe@example.com" required>
             </p>
             <p>
+                <?php echo $account->getError("Both password need to match"); ?>
+                <?php echo $account->getError("Password needs to consist of a lowercase, uppercase, numeric and a special character(\"! or ?\")"); ?>
                 <label for="Password">Password</label>
                 <input type="password" name="Password" id="Password" placeholder= "Your Password" required>
             </p>
