@@ -4,16 +4,16 @@
         {
             
         }
-        function validateUsername($username){
+        private function validateUsername($username){
 
         }
-        function validateName($name){
+        private function validateName($name){
     
         }
-        function validateEmail($em1 , $em2){
+        private function validateEmail($em1 , $em2){
     
         }
-        function validatePassword($pwd1, $pwd2){
+        private function validatePassword($pwd1, $pwd2){
     
         }
     }
