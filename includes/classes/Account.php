@@ -1,6 +1,7 @@
 <?php
     class Account {
-        public function __construct($userName,$firstName,$lastName,$email,$email_conf,$password,$password_conf)
+        public function __construct(){}
+        public function register($userName,$firstName,$lastName,$email,$email_conf,$password,$password_conf)
         {
             $this -> validateUsername($userName);
             $this -> validateName($firstName);
