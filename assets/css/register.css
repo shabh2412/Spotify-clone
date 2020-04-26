@@ -91,6 +91,7 @@ html, body{
     color: #a0a0a0;
     font-size: 15px;
     margin-top: 15px;
+    display: block;
 }
 
 #inputContainer button {
@@ -121,4 +122,36 @@ html, body{
 #registerForm, 
 #loginForm {
     display: none ;
+}
+
+#loginText {
+    padding: 45px;
+    display: table-cell;
+}
+
+#loginText h1{
+    color: #07d159;
+    font-size: 60px;
+    font-weight: bold;
+}
+#loginText h2{
+    margin: 35px;
+}
+
+#loginText ul {
+    padding: 0;
+}
+
+#loginText li {
+    font-size: 20px;
+    list-style-type: none;
+    padding: 3px 35px;
+    margin: 5px 0;
+    background: url(../images/icons/checkmark.png) no-repeat;
+}
+
+#inputContainer .errorMessage {
+    color: #07d159;
+    font-size: 12px;
+    display: block;
 }
