@@ -116,6 +116,15 @@
                     </div>
                 </form>
             </div>
+            <div id="loginText">
+                <h1>Listen to great music, right now!</h1>
+                <h2>All great content at one place</h2>
+                <ul>
+                    <li>Discover your kind of music</li>
+                    <li>Create your playlist</li>
+                    <li>Follow your favourite artists</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
