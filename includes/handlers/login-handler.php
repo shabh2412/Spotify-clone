@@ -5,6 +5,10 @@
         $password = $_POST['loginPassword'];
 
         //login function
-        
+        $result = $account -> login($username, $password);
+
+        if($result) {
+            header('location: index.php');
+        }
     }
 ?>

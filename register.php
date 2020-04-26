@@ -23,8 +23,9 @@
         <form action="register.php" id="loginForm" method="POST">
             <h2>Login To Your Account</h2>
             <p>
+                <?php echo $account->getError(Constants::$loginFailed); ?>
                 <label for="loginUsername">Username</label>
-                <input type="text" name="loginUsername" id="loginUsername" placeholder="Ex: johnDoe" required>
+                <input type="text" name="loginUsername" id="loginUsername" placeholder="Ex: johnDoe" required value="<?php getInputValue('loginUserName');?>">
             </p>
             <p>
                 <label for="loginPassword">Password</label>
