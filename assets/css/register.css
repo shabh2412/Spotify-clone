@@ -34,20 +34,22 @@ html, body{
     max-width: 1024px
 }
 
-#input-container {
+#inputContainer {
     width: 400px;
     padding: 45px;
     float: left;
     border-right: 1px solid #999;
+    background-color: rgba(5,5,5,0.5);
 }
 
-#input-container h2 {
+#inputContainer h2 {
     text-align: center;
 }
 
-#input-container input[type = "text"],
-#input-container input[type = "email"],
-#input-container input[type = "password"] {
+#inputContainer input[type = "text"],
+#inputContainer input[type = "email"],
+#inputContainer input[type = "password"] {
+    font-size: 15px;
     display: block;
     background-color: transparent;
     border: 0;
@@ -55,4 +57,67 @@ html, body{
     height: 27px;
     line-height: 27px;
     width: 100%;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgb(119, 80, 7);
+    font-size: 15px;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    rgb(119, 80, 7);
+   font-size: 15px;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgb(119, 80, 7);
+   font-size: 15px;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    rgb(119, 80, 7);
+   font-size: 15px;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    rgb(119, 80, 7);
+   font-size: 15px;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    rgb(119, 80, 7);
+   font-size: 15px;
+}
+
+#inputContainer label {
+    color: #a0a0a0;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+#inputContainer button {
+    background-color: transparent;
+    border: 2px solid #0ff;
+    border-radius: 250px;
+    color: white;
+    display: block;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 20px auto;
+    height: 41px;
+    width: 100%;
+}
+#inputContainer button:hover {
+    background-color: #2c3532;
+    cursor: pointer;
+}
+.hasAccountText {
+    text-align: center;
+}
+.hasAccountText span {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#registerForm, 
+#loginForm {
+    display: none ;
 }
