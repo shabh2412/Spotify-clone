@@ -18,12 +18,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Songtify</title>
     <link rel="stylesheet" href="assets/css/register.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+
+    <script src="assets/js/register.js"></script>
 </head>
 <body>
     <div id="background">
         <div id="loginContainer">
 
-            <div id="input-container">
+            <div id="inputContainer">
                 <form action="register.php" id="loginForm" method="POST">
                     <h2>Login To Your Account</h2>
                     <p>
@@ -36,6 +40,11 @@
                         <input type="password" name="loginPassword" id="loginPassword" placeholder="*****" required>
                     </p>
                     <button type="submit" name="loginButton">Login</button>
+
+                    <div class="hasAccountText">
+                        <span id="hideLogin">Don't have an account yet? Signup Here</span>
+                    </div>
+                    
                 </form>
                 
                 <form action="register.php" id="registerForm" method="POST">
@@ -79,6 +88,9 @@
                         <input type="password" name="Password-conf" id="Password-conf" placeholder="Re-enter Password" required>
                     </p>
                     <button type="submit" name="registerButton">Sign Up</button>
+                    <div class="hasAccountText">
+                        <span id="hideRegister">Already have an account? Log in Here</span>
+                    </div>
                 </form>
             </div>
         </div>
