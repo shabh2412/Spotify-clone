@@ -11,6 +11,7 @@
 
         $wasSuccessful = $account -> register($userName, $firstName, $lastName, $email, $email_conf, $password, $password_conf);
         if ($wasSuccessful) {
+            $_SESSION['userLoggedIn'] = $userName;
             header("location: index.php");
         }
 
