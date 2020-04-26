@@ -39,6 +39,7 @@ html, body{
     padding: 45px;
     float: left;
     border-right: 1px solid #999;
+    background-color: rgba(5,5,5,0.5);
 }
 
 #inputContainer h2 {
@@ -48,6 +49,7 @@ html, body{
 #inputContainer input[type = "text"],
 #inputContainer input[type = "email"],
 #inputContainer input[type = "password"] {
+    font-size: 15px;
     display: block;
     background-color: transparent;
     border: 0;
@@ -58,25 +60,31 @@ html, body{
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #fff;
+    color:    rgb(119, 80, 7);
+    font-size: 15px;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #fff;
+   color:    rgb(119, 80, 7);
+   font-size: 15px;
    opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #fff;
+   color:    rgb(119, 80, 7);
+   font-size: 15px;
    opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #fff;
+   color:    rgb(119, 80, 7);
+   font-size: 15px;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
-   color:    #fff;
+   color:    rgb(119, 80, 7);
+   font-size: 15px;
 }
 
 ::placeholder { /* Most modern browsers support this now. */
-   color:    #fff;
+   color:    rgb(119, 80, 7);
+   font-size: 15px;
 }
 
 #inputContainer label {
@@ -107,4 +115,9 @@ html, body{
 .hasAccountText span {
     font-weight: bold;
     font-size: 14px;
+}
+
+#registerForm, 
+#loginForm {
+    display: none ;
 }
