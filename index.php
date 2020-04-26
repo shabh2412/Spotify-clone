@@ -1,9 +1,14 @@
 <?php
-
     include("includes/config.php");
     if(isset($_SESSION['userLoggedIn'])){
         $userName = $_SESSION['userLoggedIn'];
+        if(time() - $_SESSION['loginTime'] > 3600) {
+            session_destroy();
+            header('location: register.php');
+        }
+        
     }   else{
+        session_destroy();
         header('location: register.php');
     }
 ?>
