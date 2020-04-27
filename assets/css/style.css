@@ -33,3 +33,33 @@ html, body {
     flex-direction: column;
     align-items: center;
 }
+
+#nowPlayingBar .content {
+    width: 100%;
+}
+
+.playerControls .buttons {
+    margin: 0 auto;
+    display: table;
+}
+
+.controlButton  {
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+}
+
+.controlButton img {
+    width: 25px;
+    height: 25px;
+}
+
+.controlButton.play img,
+.controlButton.pause img {
+    width: 50px;
+    height: 50px;
+}
+
+.controlButton:hover {
+    cursor: pointer;
+}
