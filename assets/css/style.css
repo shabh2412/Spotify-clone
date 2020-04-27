@@ -16,7 +16,7 @@ html, body {
 #nowPlayingBar {
     display: flex;
     height: 90px;
-    padding: 16px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -62,4 +62,46 @@ html, body {
 
 .controlButton:hover {
     cursor: pointer;
+}
+
+
+.progressTime {
+    color: #a0a0a0;
+    font-size: 15px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.progressBar {
+    width: 100%;
+
+    height: 12px;
+    
+    display: inline-flex;
+    
+    cursor: pointer;
+}
+
+.playbackBar {
+    display: flex;
+}
+
+.progressBarBg {
+    background-color: #404040;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.progress {
+
+    background-color: #a0a0a0;
+    height: 4px;
+    width: 0;
+    border-radius: 2px;
+
+}
+
+.playbackBar .progressBar {
+    margin-top: 3px;
 }
