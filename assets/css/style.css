@@ -1,0 +1,107 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+#nowPlayingBarContainer {
+
+    width: 100%;
+    background-color: #282828;
+    position: fixed;
+    bottom: 0;
+
+}
+
+#nowPlayingBar {
+    display: flex;
+    height: 90px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#nowPlayingLeft,
+#nowPlayingRight {
+    width: 30%;
+    min-width: 180px;
+}
+
+#nowPlayingCenter {
+    width: 40%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nowPlayingBar .content {
+    width: 100%;
+}
+
+.playerControls .buttons {
+    margin: 0 auto;
+    display: table;
+}
+
+.controlButton  {
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+}
+
+.controlButton img {
+    width: 25px;
+    height: 25px;
+}
+
+.controlButton.play img,
+.controlButton.pause img {
+    width: 50px;
+    height: 50px;
+}
+
+.controlButton:hover {
+    cursor: pointer;
+}
+
+
+.progressTime {
+    color: #a0a0a0;
+    font-size: 15px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.progressBar {
+    width: 100%;
+
+    height: 12px;
+    
+    display: inline-flex;
+    
+    cursor: pointer;
+}
+
+.playbackBar {
+    display: flex;
+}
+
+.progressBarBg {
+    background-color: #404040;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.progress {
+
+    background-color: #a0a0a0;
+    height: 4px;
+    width: 0;
+    border-radius: 2px;
+
+}
+
+.playbackBar .progressBar {
+    margin-top: 3px;
+}

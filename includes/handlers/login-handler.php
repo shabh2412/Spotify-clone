@@ -9,6 +9,7 @@
 
         if($result) {
             $_SESSION['userLoggedIn'] = $username;
+            $_SESSION['loginTime'] = time();
             header('location: index.php');
         }
     }
