@@ -1,6 +1,7 @@
 <?php
     include("includes/config.php");
-    include("includes/classes/artist.php");
+    include("includes/classes/Artist.php");
+    include("includes/classes/Album.php");
     if(isset($_SESSION['userLoggedIn'])){
         $userName = $_SESSION['userLoggedIn'];
         if(time() - $_SESSION['loginTime'] > 3600) {
