@@ -23,9 +23,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome To Muscify</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js"></script>
 </head>
 <body>
-    
+    <script>
+        var audioElement = new Audio(); 
+        audioElement.setTrack('assets/music/NiceToMeetYa-Official.mp3');
+        audioElement.audio.play();
+    </script>
     <div id="mainContainer">
         <div id="topContainer">
 
