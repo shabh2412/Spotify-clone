@@ -39,6 +39,10 @@
         {
             return $this->path;
         }
+        public function getDuration()
+        {
+            return $this->duration;
+        }
         public function getMysqliData()
         {
             return $this->mysqliData;
