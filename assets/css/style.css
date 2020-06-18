@@ -29,7 +29,7 @@ body {
 
 #nowPlayingBar {
     display: flex;
-    height: 90px;
+    height: 100px;
     padding: 10px;
     box-sizing: border-box;
 }
@@ -55,7 +55,7 @@ body {
 }
 
 #nowPlayingBar .content {
-    height: 57px;
+    height: 110%;
     width: 100%;
 }
 
