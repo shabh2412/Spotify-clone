@@ -16,7 +16,6 @@
             $this->artistId = $album['artist'];
             $this->genre = $album['genre'];
             $this->artworkPath = $album['artworkPath'];
-
         }
         
         public function getTitle()

@@ -24,6 +24,10 @@
             <div class="navItem">
                 <a href="profile.php" class="navItemLink">Profile</a>
             </div>
+            
+            <div class="navItem">
+                <a href="albumAndSongs.php" class="navItemLink">All Albums</a>
+            </div>
         </div>
 
     </nav>
