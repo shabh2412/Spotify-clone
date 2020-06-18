@@ -22,7 +22,11 @@
         // audioElement.setTrack("assets/music/NiceToMeetYa-Official.mp3");
         // ajax code below
         $.post("includes/handlers/ajax/getSongJson.php", {songId : trackId}, function(data) {
-            console.log(data);
+            // creating a JSON object, we will parse the data in to a json object
+            track = JSON.parse(data);
+            console.log(track);
+            audioElement.setTrack(track.path);
+            audioElement.play();
         });
         if(play){
             audioElement.play();
