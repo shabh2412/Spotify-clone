@@ -21,7 +21,7 @@
     function setTrack(trackId, newPlaylist, play){
         // audioElement.setTrack("assets/music/NiceToMeetYa-Official.mp3");
         // ajax code below
-        $.post("includes/handlers/ajax/getSongInfo.php", {songId : trackId}, function(data) {
+        $.post("includes/handlers/ajax/getSongJson.php", {songId : trackId}, function(data) {
             console.log(data);
         });
         if(play){
