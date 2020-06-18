@@ -28,8 +28,13 @@
 
             $.post("includes/handlers/ajax/getArtistJson.php", {artistId : track.artist}, function(data) {
                 var artist = JSON.parse(data);
-                console.log(artist);
+                // console.log(artist);
                 $(".artistName span").text(artist.name);
+            });
+            $.post("includes/handlers/ajax/getAlbumJson.php", {albumId : track.album}, function(data) {
+                var album = JSON.parse(data);
+                console.log(album);
+                $("#nowPlayingLeft .content .albumLink img").attr("src",album.artworkPath);
             });
 
             audioElement.setTrack(track.path);
@@ -60,7 +65,7 @@
         <div id="nowPlayingLeft" >
             <div class="content">
                 <span class="albumLink">
-                    <img src="https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg" alt="" class="albumArtwork">
+                    <img src="" alt="" class="albumArtwork">
                 </span>
 
                 <div class="trackInfo">
