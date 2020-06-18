@@ -26,11 +26,14 @@
     <script src="assets/js/script.js"></script>
 </head>
 <body>
-    <script>
+    <!-- <script>
         var audioElement = new Audio(); 
         audioElement.setTrack('assets/music/NiceToMeetYa-Official.mp3');
         audioElement.audio.play();
-    </script>
+    </script> -->
+
+
+
     <div id="mainContainer">
         <div id="topContainer">
 
