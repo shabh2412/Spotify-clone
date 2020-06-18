@@ -24,9 +24,16 @@
         $.post("includes/handlers/ajax/getSongJson.php", {songId : trackId}, function(data) {
             // creating a JSON object, we will parse the data in to a json object
             track = JSON.parse(data);
-            console.log(track);
+            $(".trackInfo .trackName span").text(track.title);
+
+            $.post("includes/handlers/ajax/getArtistJson.php", {artistId : track.artist}, function(data) {
+                var artist = JSON.parse(data);
+                console.log(artist);
+                $(".artistName span").text(artist.name);
+            });
+
             audioElement.setTrack(track.path);
-            audioElement.play();
+            audioElement.pause();
         });
         if(play){
             audioElement.play();
@@ -58,11 +65,11 @@
 
                 <div class="trackInfo">
                     <span class="trackName">
-                        <span>Happy Birthday</span>
+                        <span></span>
                     </span>
 
                     <span class="artistName">
-                        <span>Rishabh Panesar</span>
+                        <span></span>
                     </span>
                 </div>
             </div>
