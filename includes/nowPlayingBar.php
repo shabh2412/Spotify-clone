@@ -8,7 +8,7 @@
         array_push($resultArray, $row['id']);
     }
     $jsonArray = json_encode($resultArray);
-
+    // echo "<script>console.log($jsonArray+' Hello')</script>"
 ?>
 
 <script>
