@@ -28,12 +28,17 @@
 
             $.post("includes/handlers/ajax/getArtistJson.php", {artistId : track.artist}, function(data) {
                 var artist = JSON.parse(data);
-                console.log(artist);
+                // console.log(artist);
                 $(".artistName span").text(artist.name);
             });
+            $.post("includes/handlers/ajax/getAlbumJson.php", {albumId : track.album}, function(data) {
+                var album = JSON.parse(data);
+                console.log(album);
+                $("#nowPlayingLeft .content .albumLink img").attr("src",album.artworkPath);
+            });
 
-            audioElement.setTrack(track.path);
-            audioElement.pause();
+            audioElement.setTrack(track);
+            playSong();
         });
         if(play){
             audioElement.play();
@@ -42,6 +47,12 @@
     }
 
     function playSong() {
+        if(audioElement.audio.currentTime == 0){
+            // console.log("Update Count");
+            $.post("includes/handlers/ajax/updatePlayCount.php", {songId : audioElement.currentlyPlaying.id});
+        } else{
+            console.log("Don't Update");
+        }
         $(".controlButton.play").hide();
         $(".controlButton.pause").show();
         audioElement.play()
@@ -60,7 +71,7 @@
         <div id="nowPlayingLeft" >
             <div class="content">
                 <span class="albumLink">
-                    <img src="https://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg" alt="" class="albumArtwork">
+                    <img src="" alt="" class="albumArtwork">
                 </span>
 
                 <div class="trackInfo">
