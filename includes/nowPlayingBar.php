@@ -1,6 +1,7 @@
 <?php 
 // PHP Code for selecting 10 songs at Random. 
-    $songQuery = "SELECT id FROM songs ORDER BY RAND() LIMIT 10";
+    // $songQuery = "SELECT id FROM songs ORDER BY RAND() LIMIT 10";
+    $songQuery = "SELECT id from Songs where album = 7";
     $songQueryResult = mysqli_query($conn, $songQuery);
     $resultArray = array();
     $i=0;
@@ -16,7 +17,29 @@
         currentPlaylist = <?php echo $jsonArray;?>;
         audioElement = new Audio();
         setTrack(currentPlaylist[0],currentPlaylist, false);
+        
+        $('.playbackBar .progressBar').mousedown(function() {
+            mousedown = true;
+        });
+        $('.playbackBar .progressBar').mousemove(function(e) {
+            if(mousedown == true){
+                // set time of song depending on the position of mouse
+                timeFromOffset(e, this);
+            }
+        });
+        $('.playbackBar .progressBar').mouseup(function(e) {
+            timeFromOffset(e, this);
+            mousedown = false;
+        });
+
     });
+
+    function timeFromOffset(mouse, progressBar){
+        var percentage = (mouse.offsetX / $(progressBar).width());
+        var seconds = audioElement.audio.duration * (percentage);
+        audioElement.setTime(seconds);
+
+    }
 
     function setTrack(trackId, newPlaylist, play){
         // audioElement.setTrack("assets/music/NiceToMeetYa-Official.mp3");
