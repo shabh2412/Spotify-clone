@@ -14,9 +14,9 @@
 
 <script>
     $(document).ready(function (){
-        currentPlaylist = <?php echo $jsonArray;?>;
+        var newPlaylist = <?php echo $jsonArray;?>;
         audioElement = new Audio();
-        setTrack(currentPlaylist[0],currentPlaylist, false);
+        setTrack(newPlaylist[0],newPlaylist, false);
         updateVolumeProgressBar(audioElement.audio);
 
         $("#nowPlayingBar").on("mousedown touchstart mousemove touchmove", function(e){
@@ -93,7 +93,7 @@
         else{
             currentIndex = currentIndex + 1;
         }
-        var trackToPlay = currentPlaylist[currentIndex];
+        var trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
         setTrack(trackToPlay, currentPlaylist, true);
     }
 
@@ -102,10 +102,53 @@
         var imageName = repeat ? "repeat-active.png" : "repeat.png";
         $(".controlButton.repeat img").attr("src","assets/images/icons/"+imageName);
     }
+    function setMute() {
+        audioElement.audio.muted = !audioElement.audio.muted;
+        var imageName = audioElement.audio.muted ? "volume-mute.png" : "volume.png";
+        $(".controlButton.volume img").attr("src","assets/images/icons/"+imageName);
+    }
+    function setShuffle() {
+        shuffle = !shuffle;
+        var imageName = shuffle ? "shuffle-active.png" : "shuffle.png";
+        $(".controlButton.shuffle img").attr("src","assets/images/icons/"+imageName);
+        // console.log(currentPlaylist);
+        // console.log(shufflePlaylist);
+        if(shuffle) {
+            // randomize playlist
+            shuffleArray(shufflePlaylist);
+            currentIndex = shufflePlaylist.indexOf(audioElement.currentlyPlaying.id);
+            
+        } else {
+            // go back to normal playlist
+            currentIndex = currentlyPlaylist.indexOf(audioElement.currentlyPlaying.id);
+        }
+    }
 
+    function shuffleArray(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+    
     function setTrack(trackId, newPlaylist, play){
 
-        currentIndex = currentPlaylist.indexOf(trackId);
+        if(newPlaylist != currentPlaylist) {
+            currentPlaylist = newPlaylist;
+            shufflePlaylist = currentPlaylist.slice();
+            shuffleArray(shufflePlaylist);
+        }
+        
+        if (shuffle == true) {
+            currentIndex = shufflePlaylist.indexOf(trackId);
+        }
+        else {
+            currentIndex = currentPlaylist.indexOf(trackId);
+        }
         pauseSong();
         // audioElement.setTrack("assets/music/NiceToMeetYa-Official.mp3");
         // ajax code below
@@ -177,7 +220,7 @@
             <div class="content playerControls">
                 <div class="buttons">
                     <button class="controlButton shuffle" title="Shuffle Button">
-                        <img src="assets/images/icons/shuffle.png" alt="Shuffle">
+                        <img src="assets/images/icons/shuffle.png" alt="Shuffle" onclick="setShuffle()">
                     </button>
 
                     <button class="controlButton previous" title="Previous Button" onclick="prevSong()">
@@ -214,7 +257,7 @@
         </div>
         <div id="nowPlayingRight" >
             <div class="volumeBar">
-                <button class="controlButton volume" title="Volume Button">
+                <button class="controlButton volume" title="Volume Button" onclick="setMute()">
                     <img src="assets/images/icons/volume.png" alt="Volume">
                 </button>
                 
