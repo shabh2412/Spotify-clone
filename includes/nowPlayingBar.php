@@ -1,6 +1,7 @@
 <?php 
 // PHP Code for selecting 10 songs at Random. 
     $songQuery = "SELECT id FROM songs ORDER BY RAND() LIMIT 10";
+    // $songQuery = "SELECT id from Songs where album = 7";
     $songQueryResult = mysqli_query($conn, $songQuery);
     $resultArray = array();
     $i=0;
@@ -16,9 +17,96 @@
         currentPlaylist = <?php echo $jsonArray;?>;
         audioElement = new Audio();
         setTrack(currentPlaylist[0],currentPlaylist, false);
+        updateVolumeProgressBar(audioElement.audio);
+
+        $("#nowPlayingBar").on("mousedown touchstart mousemove touchmove", function(e){
+            e.preventDefault();
+        });
+        
+        $('.playbackBar .progressBar').mousedown(function() {
+            mousedown = true;
+        });
+        $('.playbackBar .progressBar').mousemove(function(e) {
+            if(mousedown == true){
+                // set time of song depending on the position of mouse
+                timeFromOffset(e, this);
+            }
+        });
+        $('.playbackBar .progressBar').mouseup(function(e) {
+            timeFromOffset(e, this);
+            mousedown = false;
+        });
+        $('.volumeBar .progressBar').mousedown(function() {
+            mousedown = true;
+        });
+        $('.volumeBar .progressBar').mousemove(function(e) {
+            if(mousedown == true){
+                var percentage = e.offsetX / $(this).width();
+                if(percentage>=0 && percentage<=1){
+                    audioElement.audio.volume = percentage;
+                }
+            }
+        });
+        $('.volumeBar .progressBar').mouseup(function(e) {
+            var percentage = e.offsetX / $(this).width();
+            if(percentage>=0 && percentage<=1){
+                audioElement.audio.volume = percentage;
+            }
+            mousedown = false;
+        });
+
     });
 
+    function timeFromOffset(mouse, progressBar){
+        var percentage = (mouse.offsetX / $(progressBar).width());
+        var seconds = audioElement.audio.duration * (percentage);
+        audioElement.setTime(seconds);
+
+    }
+
+    function prevSong() {
+        if(audioElement.audio.currentTime >= 3 || currentIndex == 0){
+            audioElement.setTime(0);
+        } 
+        else{
+            if(repeat == true) {
+                audioElement.setTime(0);
+                playSong();
+            }
+            else{
+                currentIndex = currentIndex - 1;
+            }
+        }
+        var trackToPlay = currentPlaylist[currentIndex];
+        setTrack(trackToPlay, currentPlaylist, true);
+    }
+
+    function nextSong() {
+        if(repeat == true) {
+            audioElement.setTime(0);
+            playSong();
+            return;
+        }
+        if(currentIndex == currentPlaylist.length - 1){
+            currentIndex = 0;
+        }
+        else{
+            currentIndex = currentIndex + 1;
+        }
+        var trackToPlay = currentPlaylist[currentIndex];
+        setTrack(trackToPlay, currentPlaylist, true);
+    }
+
+    function setRepeat() {
+        repeat = !repeat;
+        var imageName = repeat ? "repeat-active.png" : "repeat.png";
+        $(".controlButton.repeat img").attr("src","assets/images/icons/"+imageName);
+    }
+
     function setTrack(trackId, newPlaylist, play){
+
+        currentIndex = currentPlaylist.indexOf(trackId);
+        pauseSong();
         // audioElement.setTrack("assets/music/NiceToMeetYa-Official.mp3");
         // ajax code below
         $.post("includes/handlers/ajax/getSongJson.php", {songId : trackId}, function(data) {
@@ -92,7 +180,7 @@
                         <img src="assets/images/icons/shuffle.png" alt="Shuffle">
                     </button>
 
-                    <button class="controlButton previous" title="Previous Button">
+                    <button class="controlButton previous" title="Previous Button" onclick="prevSong()">
                         <img src="assets/images/icons/previous.png" alt="Previous">
                     </button>
 
@@ -104,11 +192,11 @@
                         <img src="assets/images/icons/pause.png" alt="Pause">
                     </button>
 
-                    <button class="controlButton next" title="Next Button">
+                    <button class="controlButton next" onclick="nextSong()" title="Next Button">
                         <img src="assets/images/icons/next.png" alt="Next">
                     </button>
 
-                    <button class="controlButton repeat" title="repeat Button">
+                    <button class="controlButton repeat" title="repeat Button" onclick="setRepeat()">
                         <img src="assets/images/icons/repeat.png" alt="Repeat">
                     </button>
                 </div>
