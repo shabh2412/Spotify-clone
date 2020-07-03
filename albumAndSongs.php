@@ -7,13 +7,13 @@
 
     $timezone = date_default_timezone_set("Asia/Kolkata");
 
-    $conn = mysqli_connect("localhost", "root", "", "muscify");
+    $conn = mysqli_connect("localhost", "root", "24261209", "muscify");
 
     if (mysqli_connect_errno()) {
         echo "Failed to connect : ".mysqli_connect_errno();
     }
     #end of DB connection code
-    $albumQuery = "SELECT albums.title AS Album_Name,songs.title AS Song_Name from albums,songs WHERE songs.album = albums.id ORDER BY `albums`.`id` ASC";
+    $albumQuery = "SELECT albums.title AS Album_Name,Songs.title AS Song_Name from albums,Songs WHERE Songs.album = albums.id ORDER BY `albums`.`id` ASC";
 
     $albqueryResult = mysqli_query($conn, $albumQuery);
 

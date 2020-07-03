@@ -1,6 +1,6 @@
 <?php 
 // PHP Code for selecting 10 songs at Random. 
-    $songQuery = "SELECT id FROM songs ORDER BY RAND() LIMIT 10";
+    $songQuery = "SELECT id FROM Songs ORDER BY RAND() LIMIT 10";
     // $songQuery = "SELECT id from Songs where album = 7";
     $songQueryResult = mysqli_query($conn, $songQuery);
     $resultArray = array();
