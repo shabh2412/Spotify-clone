@@ -12,7 +12,7 @@
         public function __construct($conn, $id){
             $this->conn = $conn;
             $this->id = $id;
-            $albumQuery = "SELECT * FROM songs WHERE id = '$this->id'";
+            $albumQuery = "SELECT * FROM Songs WHERE id = '$this->id'";
             $resultAlbumQuery = mysqli_query($this->conn, $albumQuery);
             $this->mysqliData = mysqli_fetch_array($resultAlbumQuery);
             $this->title = $this->mysqliData['title'];
@@ -26,6 +26,10 @@
         public function getTitle()
         {
             return $this->title;
+        }
+        public function getId()
+        {
+            return $this->id;
         }
         public function getArtist()
         {
