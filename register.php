@@ -105,6 +105,8 @@
                         <?php echo $account->getError(Constants::$passwordTooSimple); ?>
                         <label for="Password">Password</label>
                         <input type="password" name="Password" id="Password" placeholder= "Your Password" required>
+                        <p></p>
+                        <span>Must contain Upper and lowercase, $ or !, and a Numeric Character. Min Length: 8 characters</span>
                     </p>
                     <p>
                         <label for="Password-conf">Confirm Password</label>
