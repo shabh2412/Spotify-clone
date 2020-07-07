@@ -46,7 +46,7 @@
                                         temp.type = "password"; 
                                     } 
                                 } 
-                        </script> 
+                            </script> 
                         </p>
                         <button type="submit" value='Update Password Pwd' name="loginButton">Update Password</button>
                     </form>
