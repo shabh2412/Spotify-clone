@@ -23,11 +23,8 @@
         } else {
             echo "Pssst.... Something went wrong";
         }
-        
-
-    }
         exit("Password Updated!");
-}
+    }
 
 ?>
 <!DOCTYPE html>
