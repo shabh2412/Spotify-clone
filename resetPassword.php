@@ -20,7 +20,8 @@
         $query = mysqli_query($conn, "UPDATE users SET password = '$pwd' WHERE email = '$email'");
         if($query) {
             $query = mysqli_query($conn, "DELETE FROM resetPasswords WHERE code = '$code'");
-            exit("Password Updated");
+            echo "Password Updated! Now you will be redirected to sign in page";
+            header('location: register.php');
         } else {
             exit("Something went wrong");
         }
