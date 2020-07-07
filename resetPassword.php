@@ -5,28 +5,25 @@
         exit("Can't Find the requested page :(");
     } 
     $code = $_GET['code'];
-    $query = "SELECT * FROM resetPasswords WHERE code = '$code'";
+    $query = "SELECT email FROM resetPasswords WHERE code = '$code'";
     $execQuery = mysqli_query($conn, $query);
-    // if(mysqli_num_rows($execQuery) == 0) {
-    //     exit("Can't Find the requested page :(");        
-    // } 
+    if(mysqli_num_rows($execQuery) == 0) {
+        exit("Can't Find the requested page :(");        
+    } 
 
-    if(isset($_POST['password'])){
+    if(isset($_POST["password"])) {
         $pwd = $_POST['password'];
         $pwd = md5($pwd);
-        
         $row = mysqli_fetch_array($execQuery);
-        $email = $row ['email'];
-        $updQuery = "UPDATE users SET password = '$pwd', WHERE email = '$email"; 
-        if($updQuery) {
-            $exec_UpdQuery = mysqli_query($conn, "DELETE FROM resetPasswords WHERE code = '$code'");
-            if($updQuery){
-                echo "reset sucessfull";
-            }
+        $email = $row['email'];
+
+        $query = mysqli_query($conn, "UPDATE users SET password = '$pwd' WHERE email = '$email'");
+        if($query) {
+            $query = mysqli_query($conn, "DELETE FROM resetPasswords WHERE code = '$code'");
+            exit("Password Updated");
         } else {
-            echo "Pssst.... Something went wrong";
+            exit("Something went wrong");
         }
-        exit("Password Updated!");
     }
 
 ?>
