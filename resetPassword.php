@@ -32,7 +32,7 @@
                         <p>
                             <label for="password">New Password</label>
                             <input type="password" name="password" id="password" placeholder="Ex: New Password" required>
-                            <input type="checkbox" onclick="Toggle()"> 
+                            <input type="checkbox" onclick="Toggle()"> <br>
                             <b>Show Password</b> 
                         
                             <script> 
