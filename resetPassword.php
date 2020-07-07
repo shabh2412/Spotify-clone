@@ -20,6 +20,9 @@
         $updQuery = "UPDATE users SET password = '$pwd', WHERE email = '$email"; 
         if($updQuery) {
             $exec_UpdQuery = mysqli_query($conn, "DELETE FROM resetPasswords WHERE code = '$code'");
+            if($updQuery){
+                echo "reset sucessfull";
+            }
         } else {
             echo "Pssst.... Something went wrong";
         }
