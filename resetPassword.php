@@ -33,11 +33,7 @@
                             <label for="password">New Password</label>
                             <input type="password" name="password" id="password" placeholder="Ex: New Password" required>
                         </p>
-                        <p>
-                            <label for="passConf">Your E-Mail ID</label>
-                            <input type="password" name="passConf" id="passConf" placeholder="johndoe@example.com" required>
-                        </p>
-                        <button type="submit" value='Reset Pwd' name="loginButton" onclick="validatePassword($_POST['password'],$_POST['passConf'])">Reset Password</button>
+                        <button type="submit" value='Update Password Pwd' name="loginButton">Update Password</button>
                     </form>
                 </div>
             </div>
