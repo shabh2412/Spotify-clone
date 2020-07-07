@@ -1,4 +1,4 @@
-<?php
+<?php include('includes/header.php');
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
@@ -25,7 +25,7 @@
         $mail->setFrom('support@musifysongs.com', 'Musify Support');
         $mail->addAddress('rishabhpanesar@gmail.com', 'Rishabh Panesar');     // Add a recipient
         // $mail->addAddress('ellen@example.com');               // Name is optional
-        $mail->addReplyTo('info@musifysongs.com', 'Musify Support');
+        $mail->addReplyTo('opensongsmusify@gmail.com', 'Musify Support');
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');
 
@@ -44,4 +44,5 @@
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
+    include('includes/footer.php');
 ?>
