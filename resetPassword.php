@@ -26,7 +26,7 @@
         <div id="background">
             <div id="loginContainer">
                 <div id="inputContainer">
-                    <form id='loginForm' method="post">
+                    <form id='loginForm' style="display: block;" method="post">
                     <h2>Reset Your Password</h2>
                         <p>
                             <label for="loginUsername">Username</label>
