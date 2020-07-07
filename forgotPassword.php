@@ -19,6 +19,7 @@
         $userName = $_POST['loginUsername'];
 
         $code = uniqid(true);
+        $url = "http://".$_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"] . "/resetPassword.php?code=$code");
         $query = "INSERT INTO resetPasswords(code, username, email) VALUES ('$code', '$userName', '$usrEmail')";
         $execQuery = mysqli_query($conn, $query);
         if(!$execQuery) {
@@ -50,7 +51,7 @@
             // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
             // Content
-            $url = "http://".$_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"] . "/resetPassword.php?code=$code");
+
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Reset Password';
             $mail->Body    = "<!doctype html>
@@ -460,9 +461,9 @@
             $mail->AltBody = 'Hi!'.$userName.', you have requested for a password reset! Here\'s your link: $code';
             
             $mail->send();
-            echo "<script>alert($url);</script>";
             echo '<script>console.log("Message has been sent");</script>';
             echo "Mail Has been sent to $usrEmail!";
+            echo "<script>alert($url);</script>";
             exit();
         } catch (Exception $e) {
             echo "<script>console.log('Message could not be sent. Mailer Error: {$mail->ErrorInfo}');</script>";
