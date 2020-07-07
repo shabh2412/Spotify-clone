@@ -50,9 +50,10 @@
             // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
             // Content
+            $url = "http://".$_SERVER["HTTP_POST"] . dirname($_SERVER["PHP_SELF"] . "/resetPassword.php?code=$code");
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Reset Password';
-            $mail->Body    = "</hr><h1><b>Hi '.$userName.'!</h1></b> <br>You have requested for a <b>Password Reset</b></hr>Here is your link: $code";
+            $mail->Body    = include('includes/handlers/Mail/mailBody.php');
             $mail->AltBody = 'Hi!'.$userName.', you have requested for a password reset! Here\'s your link: $code';
 
             $mail->send();
