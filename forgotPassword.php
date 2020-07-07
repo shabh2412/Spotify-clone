@@ -50,7 +50,7 @@
             // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
             // Content
-            $url = "http://".$_SERVER["HTTP_POST"] . dirname($_SERVER["PHP_SELF"] . "/resetPassword.php?code=$code");
+            $url = "http://".$_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"] . "/resetPassword.php?code=$code");
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Reset Password';
             $mail->Body    = "<!doctype html>
