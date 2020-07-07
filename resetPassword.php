@@ -1,5 +1,6 @@
 <?php
     include('includes/config.php');
+    include('includes/classes/Account.php');
     if(!isset($_GET["code"])) {
         exit("Can't Find the requested page :(");
     } 
@@ -29,14 +30,14 @@
                     <form id='loginForm' style="display: block;" method="post">
                     <h2>Reset Your Password</h2>
                         <p>
-                            <label for="loginUsername">Username</label>
-                            <input type="text" name="loginUsername" id="loginUsername" placeholder="Ex: johnDoe" required>
+                            <label for="password">New Password</label>
+                            <input type="password" name="password" id="password" placeholder="Ex: New Password" required>
                         </p>
                         <p>
-                            <label for="loginEmail">Your E-Mail ID</label>
-                            <input type="email" name="loginEmail" id="loginEmail" placeholder="johndoe@example.com" required>
+                            <label for="passConf">Your E-Mail ID</label>
+                            <input type="password" name="passConf" id="passConf" placeholder="johndoe@example.com" required>
                         </p>
-                        <button type="submit" value='Reset Pwd' name="loginButton">Reset Password</button>
+                        <button type="submit" value='Reset Pwd' name="loginButton" onclick="validatePassword($_POST['password'],$_POST['passConf'])">Reset Password</button>
                     </form>
                 </div>
             </div>
