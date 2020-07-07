@@ -6,6 +6,7 @@
     require 'PHPMailer/src/SMTP.php';
     use PHPMailer\PHPMailer\SMTP;
 
+    include("includes/config.php");
 
     if(isset($_POST['loginUsername']) && isset($_POST['loginEmail']) ){
         // Load Composer's autoloader
