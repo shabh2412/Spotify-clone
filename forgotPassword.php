@@ -45,17 +45,16 @@
             $mail->send();
             echo '<script>alert("Message has been sent")</script>';
             echo "Mail Sent Successfully! <br><a href='register.php'>Login Now</a>";
+            exit();
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
-        // exit();
-        
     }    
-    function getInputValue($name) {
-        if(isset($_POST[$name])){
-            echo $_POST[$name];
-        }
-    }
+    // function getInputValue($name) {
+    //     if(isset($_POST[$name])){
+    //         echo $_POST[$name];
+    //     }
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,11 +73,11 @@
                         <h2>Reset Your Password</h2>
                         <p>
                             <label for="loginUsername">Username</label>
-                            <input type="text" name="loginUsername" id="loginUsername" placeholder="Ex: johnDoe" value = "<?php getInputValue('Username');?>" required>
+                            <input type="text" name="loginUsername" id="loginUsername" placeholder="Ex: johnDoe" required>
                         </p>
                         <p>
                             <label for="loginEmail">Your E-Mail ID</label>
-                            <input type="email" name="loginEmail" id="loginEmail" placeholder="johndoe@example.com" value = "<?php getInputValue('email');?>" required>
+                            <input type="email" name="loginEmail" id="loginEmail" placeholder="johndoe@example.com" required>
                         </p>
                         <button type="submit" value='Reset Pwd' name="loginButton">Reset Password</button>
                     </form>
