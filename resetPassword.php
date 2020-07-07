@@ -18,12 +18,16 @@
         $row = mysqli_fetch_array($execQuery);
         $email = $row ['email'];
         $updQuery = "UPDATE users SET password = '$pwd', WHERE email = '$email"; 
+        if($updQuery) {
+            $exec_UpdQuery = mysqli_query($conn, "DELETE FROM resetPasswords WHERE code = '$code'");
+        } else {
+            echo "Pssst.... Something went wrong";
+        }
+        
 
-        $exec_UpdQuery = mysqli_query($conn, "DELETE FROM resetPasswords WHERE code = '$code'");
-        exit("Passowrd Updated!");
-    } else{
-        exit("ERR. Somthing went wrong");
     }
+        exit("Password Updated!");
+}
 
 ?>
 <!DOCTYPE html>
