@@ -74,7 +74,7 @@
             $mail->send();
             echo '<script>alert("Message has been sent")</script>';
             echo "Mail Sent Successfully! <br><a href='register.php'>Login Now</a>";
-            exit();
+            // exit();
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
