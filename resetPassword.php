@@ -32,6 +32,21 @@
                         <p>
                             <label for="password">New Password</label>
                             <input type="password" name="password" id="password" placeholder="Ex: New Password" required>
+                            <input type="checkbox" onclick="Toggle()"> 
+                            <b>Show Password</b> 
+                        
+                            <script> 
+                            // Change the type of input to password or text 
+                                function Toggle() { 
+                                    var temp = document.getElementById("password"); 
+                                    if (temp.type === "password") { 
+                                        temp.type = "text"; 
+                                    } 
+                                    else { 
+                                        temp.type = "password"; 
+                                    } 
+                                } 
+                        </script> 
                         </p>
                         <button type="submit" value='Update Password Pwd' name="loginButton">Update Password</button>
                     </form>
