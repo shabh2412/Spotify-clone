@@ -51,7 +51,6 @@
 
             // Content
             $url = "http://".$_SERVER["HTTP_POST"] . dirname($_SERVER["PHP_SELF"] . "/resetPassword.php?code=$code");
-            echo "<script>alert($url);</script>";
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Reset Password';
             $mail->Body    = "<!doctype html>
@@ -459,8 +458,9 @@
               </body>
             </html>";
             $mail->AltBody = 'Hi!'.$userName.', you have requested for a password reset! Here\'s your link: $code';
-
+            
             $mail->send();
+            echo "<script>alert($url);</script>";
             echo '<script>console.log("Message has been sent");</script>';
             echo "Mail Has been sent to $usrEmail!";
             exit();
