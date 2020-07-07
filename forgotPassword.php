@@ -17,7 +17,14 @@
         
         $usrEmail = $_POST['loginEmail'];
         $userName = $_POST['loginUsername'];
-        
+
+        $code = uniqid(true);
+        $query = "INSERT INTO resetPasswords(code, username, email) VALUES ('$code', '$userName', '$usrEmail')";
+        $execQuery = mysqli_query($conn, $query);
+        if(!$execQuery) {
+            exit("ERROR");
+        }
+
         $user = "opensongsmusify@gmail.com";
         
         try {
@@ -45,11 +52,13 @@
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Reset Password';
-            $mail->Body    = '</hr><b>Hi '.$userName.'!</b> <br>You have requested for a <b>Password Reset</b>';
-            $mail->AltBody = 'Hi!'.$userName.', you have requested for a password reset! Here\'s your link:';
+            $mail->Body    = "</hr><h1><b>Hi '.$userName.'!</h1></b> <br>You have requested for a <b>Password Reset</b></hr>Here is your link: $code";
+            $mail->AltBody = 'Hi!'.$userName.', you have requested for a password reset! Here\'s your link: $code';
 
             $mail->send();
             echo '<script>console.log("Message has been sent");</script>';
+            echo "Mail Has been sent to $usrEmail!";
+            exit();
         } catch (Exception $e) {
             echo "<script>console.log('Message could not be sent. Mailer Error: {$mail->ErrorInfo}');</script>";
         }   
