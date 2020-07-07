@@ -7,15 +7,15 @@
         <link rel="stylesheet" href="assets/css/register.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     </head>
-    <body>
-        <?php
+    <?php
             use PHPMailer\PHPMailer\PHPMailer;
             use PHPMailer\PHPMailer\Exception;
-
+            
             require 'PHPMailer/src/Exception.php';
             require 'PHPMailer/src/PHPMailer.php';
             require 'PHPMailer/src/SMTP.php';
-        ?>
+            ?>
+    <body>
         <p>
             <?php
                 if(isset($_POST['loginEmail']) && isset($_POST['loginUsername']) ){
