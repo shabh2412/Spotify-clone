@@ -43,3 +43,10 @@
         </div>
     </body>
 </html>
+<?php
+    echo "<script>
+                $(document).ready(function() {
+                    $('#loginForm').show();
+                });
+            </script>";
+?>
