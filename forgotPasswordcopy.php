@@ -1,15 +1,15 @@
 <?php
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
-    require("/var/www/html/PHPMailer/src/PHPMailer.php");   
-    require("/var/www/html/PHPMailer/src/SMTP.php");
+    // require("/var/www/html/PHPMailer/src/PHPMailer.php");   
+    // require("/var/www/html/PHPMailer/src/SMTP.php");
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';
     use PHPMailer\PHPMailer\SMTP;
 
     // Load Composer's autoloader
-    require 'vendor/autoload.php';
+    // require 'vendor/autoload.php';
 
     // Instantiation and passing `true` enables exceptions
     $mail = new PHPMailer(true);
@@ -85,8 +85,6 @@
         </div>
     </body>
 </html>
-
-
 <?php
     echo "<script>
                 $(document).ready(function() {
