@@ -463,7 +463,7 @@
             $mail->send();
             echo '<script>console.log("Message has been sent");</script>';
             echo "Mail Has been sent to $usrEmail!";
-            echo "<script>alert($url);</script>";
+            echo "<script>alert('$url');</script>";
             exit();
         } catch (Exception $e) {
             echo "<script>console.log('Message could not be sent. Mailer Error: {$mail->ErrorInfo}');</script>";
