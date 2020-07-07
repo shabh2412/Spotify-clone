@@ -4,7 +4,7 @@
         exit("Can't Find the requested page :(");
     } 
     $code = $_GET['code'];
-    $query = "SELECT * FROM resetPasswords WHERE code = $'code'";
+    $query = "SELECT * FROM resetPasswords WHERE code = '$code'";
     $execQuery = mysqli_query($conn, $query);
     if(mysqli_num_rows($execQuery) == 0) {
         exit("Can't Find the requested page :(");        
