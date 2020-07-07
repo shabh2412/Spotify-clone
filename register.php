@@ -67,6 +67,7 @@
                     <div class="hasAccountText">
                         <span id="hideLogin">Don't have an account yet? Signup Here</span>
                         <br>
+                        <br>
                         <span id="hideLogin"> <a href="forgotPassword.php">Forgot Password?</a></span>
                     </div>
                     
