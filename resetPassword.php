@@ -11,6 +11,20 @@
         exit("Can't Find the requested page :(");        
     } 
 
+    if(isset($_POST['password'])){
+        $pwd = $_POST['password'];
+        $pwd = md5($pwd);
+        
+        $row = mysqli_fetch_array($execQuery);
+        $email = $row ['email'];
+        $updQuery = "UPDATE users SET password = '$pwd', WHERE email = '$email"; 
+
+        $exec_UpdQuery = mysqli_query($conn, "DELETE FROM resetPasswords WHERE code = '$code'");
+        exit("Passowrd Updated!");
+    } else{
+        exit("ERR. Somthing went wrong");
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
