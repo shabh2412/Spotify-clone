@@ -1,11 +1,4 @@
 <?php
-    echo "<script>
-                $(document).ready(function() {
-                    $('#loginForm').show();
-                });
-            </script>";
-?>
-<?php
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     require("/var/www/html/PHPMailer/src/PHPMailer.php");   
@@ -94,3 +87,10 @@
 </html>
 
 
+<?php
+    echo "<script>
+                $(document).ready(function() {
+                    $('#loginForm').show();
+                });
+            </script>";
+?>
