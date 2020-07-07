@@ -28,6 +28,8 @@
                 </div>
             </div>
         </div>
+    </body>
+</html>
     <?php
         echo "<script>
                     $(document).ready(function() {
@@ -50,12 +52,12 @@
 
         // Instantiation and passing `true` enables exceptions
         $mail = new PHPMailer(true);
-
+        
         $usrEmail = 'rishabhpanesar@gmail.com';
         $userName = 'Rishabh Panesar';
-
+        
         $user = "opensongsmusify@gmail.com";
-
+        
         try {
             //Server settings
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
@@ -85,12 +87,10 @@
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
-            echo 'Message has been sent';
+            echo '<script>console.log(Message has been sent);</script>';
         } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            echo "<script>console.log(Message could not be sent. Mailer Error: {$mail->ErrorInfo});</script>";
         }
     ?>
-    </body>
-</html>
 
 
