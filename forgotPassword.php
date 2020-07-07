@@ -14,8 +14,8 @@
         // Instantiation and passing `true` enables exceptions
         $mail = new PHPMailer(true);
         
-        $usrEmail = 'rishabhpanesar@gmail.com';
-        $userName = 'Rishabh Panesar';
+        $usrEmail = $_POST['loginEmail'];
+        $userName = $_POST['loginUsername'];
         
         $user = "opensongsmusify@gmail.com";
         
