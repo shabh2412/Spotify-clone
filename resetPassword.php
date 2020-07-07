@@ -8,7 +8,7 @@
     $query = "SELECT email FROM resetPasswords WHERE code = '$code'";
     $execQuery = mysqli_query($conn, $query);
     if(mysqli_num_rows($execQuery) == 0) {
-        exit("Can't Find the requested page :(");        
+        exit("Can't Find the requested page :(\n We cannot find your email in our database :(");        
     } 
 
     if(isset($_POST["password"])) {
