@@ -11,12 +11,12 @@
         while($row = mysqli_fetch_array($resultAlbumQuery)) {
             echo "
             <div class='gridViewItem'>
-                <a href='album.php?id=".$row['id']."'>
+                <span role='link' tabindex='0' onclick=openPage(\"album.php?id=".$row['id']."\")'>
                     <img src=".$row['artworkPath']." alt=''>
                     <div class='gridViewInfo'>
                         ".$row['title']."
                     </div>
-                </a>
+                </span>
             </div>
             ";
         }
