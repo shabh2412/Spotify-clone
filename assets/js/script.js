@@ -8,6 +8,17 @@ var repeat = false;
 var shuffle = false;
 var userLoggedIn;
 
+// Below code is responsible for changing pages dynamically
+
+function openPage(url) {
+    if(url.indexOf("?") == -1){
+        url = url + "?";
+    }
+    var encodedUrl = encodeURI(url + "&userLoggedIn=" + userLoggedIn);
+    $("#mainContent").load(encodedUrl);
+
+}
+
 function formatTime(seconds){
     var time = Math.round(seconds);
     var minutes = Math.floor(time/60); //rounds down
