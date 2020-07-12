@@ -82,6 +82,7 @@
     }
 
     function nextSong() {
+        console.log("Current Index -> ",currentIndex);
         if(repeat == true) {
             audioElement.setTime(0);
             playSong();
