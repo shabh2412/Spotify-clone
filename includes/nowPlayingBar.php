@@ -96,8 +96,9 @@
         }
         var trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
         setTrack(trackToPlay, currentPlaylist, true);
+        console.log("Current Index -> ",currentIndex);
     }
-
+    
     function setRepeat() {
         repeat = !repeat;
         var imageName = repeat ? "repeat-active.png" : "repeat.png";
