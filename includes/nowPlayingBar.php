@@ -164,7 +164,7 @@
             });
             $.post("includes/handlers/ajax/getAlbumJson.php", {albumId : track.album}, function(data) {
                 var album = JSON.parse(data);
-                console.log(album);
+                // console.log(album);  // for testing purpose
                 $("#nowPlayingLeft .content .albumLink img").attr("src",album.artworkPath);
             });
 

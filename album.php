@@ -62,7 +62,7 @@
         <script>
             var tempSongIds = '<?php echo json_encode($songIdArray); ?>';
             tempPlaylist = JSON.parse(tempSongIds);
-            console.log("The Id's -> ",tempPlaylist);
+            // console.log("The Id's -> ",tempPlaylist);  //For testing the playlist
         </script>
     </ul>
 </div>
