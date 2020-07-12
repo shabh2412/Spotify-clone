@@ -82,7 +82,6 @@
     }
 
     function nextSong() {
-        console.log("Current Index -> ",currentIndex);
         if(repeat == true) {
             audioElement.setTime(0);
             playSong();
@@ -96,7 +95,6 @@
         }
         var trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
         setTrack(trackToPlay, currentPlaylist, true);
-        console.log("Current Index -> ",currentIndex);
     }
     
     function setRepeat() {
