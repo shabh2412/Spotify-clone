@@ -3,10 +3,10 @@
     include("includes/classes/Artist.php");
     include("includes/classes/Album.php");
     include("includes/classes/Song.php");
-    if(isset($_SESSION['userLoggedIn'])){
-        $userName = $_SESSION['userLoggedIn'];
+    if(isset($_SESSION["userLoggedIn"])){
+        $userName = $_SESSION["userLoggedIn"];
         echo "<script>userLoggedIn = '$userName';</script>";
-        if(time() - $_SESSION['loginTime'] > 3600) {
+        if(time() - $_SESSION["loginTime"] > 3600) {
             session_destroy();
             header('location: register.php');
         }
