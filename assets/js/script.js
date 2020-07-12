@@ -2,7 +2,7 @@ var currentPlaylist = Array();
 var shufflePlaylist = Array();
 var tempPlaylist = Array();
 var audioElement;
-var mouseDown = false;
+var mousedown = false;
 var currentIndex = 0;
 var repeat = false;
 var shuffle = false;
