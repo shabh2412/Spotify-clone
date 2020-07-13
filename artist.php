@@ -18,6 +18,9 @@
                     echo $artist->getName();
                 ?>
             </h1>
+            <div class="headerButtons">
+                <button class="button">PLAY SONGS FROM THIS ARTIST</button>
+            </div>
         </div>
     </div>
 </div>
