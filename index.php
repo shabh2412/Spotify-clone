@@ -11,8 +11,7 @@
         while($row = mysqli_fetch_array($resultAlbumQuery)) {
             echo "
             <div class='gridViewItem'>
-                <span role='link' tabindex='0' onclick=openPage(\"album.php?id=".$row['id']."\")'>
-                    <img src=".$row['artworkPath']." alt=''>
+                <span role='link' tabindex='0' onclick='openPage(\"album.php?id=".$row['id']."\")'>
                     <div class='gridViewInfo'>
                         ".$row['title']."
                     </div>
