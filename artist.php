@@ -19,7 +19,7 @@
                 ?>
             </h1>
             <div class="headerButtons">
-                <button class="button green">PLAY SONGS FROM THIS ARTIST</button>
+                <button class="button green" onclick="playFirstSong()">PLAY SONGS FROM THIS ARTIST</button>
             </div>
         </div>
     </div>
