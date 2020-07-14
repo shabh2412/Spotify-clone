@@ -417,3 +417,8 @@ h1{
     padding: 15px;
     min-width: 130px;
 }
+
+.button.green {
+    background-color: #2ebd59;
+    border-color: #2ebd59;
+}
