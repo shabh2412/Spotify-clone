@@ -11,7 +11,7 @@
 ?>
 
 <div class="entityInfo">
-    <div class="centerSection">
+    <div class="centerSection borderBottom">
         <div class="artistInfo">
             <h1 class="artistName">
                 <?php
@@ -24,7 +24,7 @@
         </div>
     </div>
 </div>
-<div class="tracklistContainer">
+<div class="tracklistContainer borderBottom">
     <ul class="tracklist">
         <?php
             $songIdArray = $artist->getSongIds();
