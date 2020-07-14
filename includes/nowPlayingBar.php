@@ -169,6 +169,7 @@
                 // console.log(album);  // for testing purpose
                 $("#nowPlayingLeft .content .albumLink img").attr("src",album.artworkPath);
                 $(".albumLink img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
+                $(".trackInfo .trackName span").attr("onclick", "openPage('album.php?id=" + album.id + "')");
             });
 
             audioElement.setTrack(track);
