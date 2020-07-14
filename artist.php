@@ -65,3 +65,22 @@
         </script>
     </ul>
 </div>
+
+<div class="gridViewContainer">
+    <?php 
+        $albumQuery = "SELECT * FROM albums WHERE artist = '$artistId'";
+        $resultAlbumQuery = mysqli_query($conn, $albumQuery);
+        while($row = mysqli_fetch_array($resultAlbumQuery)) {
+            echo "
+            <div class='gridViewItem'>
+                <span role='link' tabindex='0' onclick='openPage(\"album.php?id=".$row['id']."\")'>
+                    <img src=".$row['artworkPath']." alt=''>
+                    <div class='gridViewInfo'>
+                        ".$row['title']."
+                    </div>
+                </span>
+            </div>
+            ";
+        }
+        ?>
+</div>
