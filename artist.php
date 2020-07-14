@@ -24,13 +24,15 @@
         </div>
     </div>
 </div>
-<hr>
 <div class="tracklistContainer">
     <ul class="tracklist">
         <?php
             $songIdArray = $artist->getSongIds();
             $i = 1;
             foreach($songIdArray as $songId){
+                if($i > 5){
+                    break;
+                }
                 $artistSong = new Song($conn, $songId);
                 $artistArtist = $artistSong->getArtist();
                 echo "<li class='tracklistRow'>
