@@ -168,6 +168,7 @@
                 var album = JSON.parse(data);
                 // console.log(album);  // for testing purpose
                 $("#nowPlayingLeft .content .albumLink img").attr("src",album.artworkPath);
+                $(".albumLink img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
             });
 
             audioElement.setTrack(track);
