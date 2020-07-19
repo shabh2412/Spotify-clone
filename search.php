@@ -75,3 +75,24 @@
         </script>
     </ul>
 </div>
+
+<div class="artistsContainer borderBottom">
+            <h2>Artists</h2>
+            <?php
+                $artistQuery = mysqli_query($conn, "SELECT id FROM artists WHERE name LIKE '$term%' LIMIT 10");
+                if(mysqli_num_rows($artistQuery) == 0) {
+                    echo "<span class='noResults'> No Artist found matching \"". $term ."\"</span>";
+                }
+                while($row = mysqli_fetch_array($artistQuery)) {
+                    $artistFound = new Artist($conn, $row['id']);
+                    echo 
+                    "<div class='searchResultRow'>
+                        <div class='artistName'>
+                            <span role='link' tabIndex='0', onclick='openPage(\"artist.php?id=".$artistFound->getId()."\")'>".
+                            $artistFound->getName()
+                            ."</span>
+                        </div>
+                    </div>";
+                }
+            ?>
+</div>
