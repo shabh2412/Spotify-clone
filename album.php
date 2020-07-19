@@ -51,9 +51,6 @@
                         <img src='assets/images/icons/more.png' alt='More Info' class='optionsButton'>
                     </div>
 
-                    <div class='songPlays'>
-                        <span class='plays'>".$albumSong->getPlays()."</span>
-                    </div>
                     <div class='trackDuration'>
                         <span class='duration'>".$albumSong->getDuration()."</span>
                     </div>
