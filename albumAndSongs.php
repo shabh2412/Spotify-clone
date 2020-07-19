@@ -46,7 +46,7 @@
                 $x = print_first_element($myList, $index);
                 $n++;
             } else{
-                if($n == $myList[$index]['album']){
+                if($x == $myList[$index]['album']){
                     echo $myList[$index]['song'];
                     echo "<br>";
                     echo "<br>";
