@@ -106,7 +106,7 @@
 <div class="gridViewContainer">
     <h2>Albums</h2>
     <?php 
-        $albumQuery = "SELECT * FROM albums WHERE title = '$term%' LIMIT 10";
+        $albumQuery = "SELECT * FROM albums WHERE title LIKE '$term%' LIMIT 10";
         $resultAlbumQuery = mysqli_query($conn, $albumQuery);
         if(mysqli_num_rows($albumQuery) == 0) {
             echo "<span class='noResults'> No Album found matching \"". $term ."\"</span>";
