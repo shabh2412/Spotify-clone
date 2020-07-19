@@ -19,7 +19,7 @@
                 ?>
             </h1>
             <div class="headerButtons">
-                <button class="button green" onclick="playFirstSong()">PLAY</button>
+                <button class="button green" onclick="playFirstSong(); openPage('topTen.php')">PLAY</button>
             </div>
         </div>
     </div>
