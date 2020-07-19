@@ -14,7 +14,6 @@ var timer;
 function openPage(url) {
     if(timer != null) {
         clearTimeout(timer);
-        console.log("Timer Stopped");
     }
     if(url.indexOf("?") == -1){
         url = url + "?";
