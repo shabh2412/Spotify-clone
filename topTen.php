@@ -9,15 +9,6 @@
     while($row = mysqli_fetch_array($top10)){
         array_push($TopTenArray,$row['id']);
     }
-    if(isset($_GET['reloaded'])){
-        $rel = $_GET['reloaded'];
-        if($rel == 'true') {
-            $rel = 'false';
-            echo "<script>openPage('topTen.php?reloaded=false')</script>";
-        } else {
-            echo "<script>location.reload();</script>";
-        }
-    }
 ?>
 <div class="entityInfo">
     <div class="centerSection borderBottom">
@@ -43,7 +34,7 @@
                 $albumArtist = $albumSong->getArtist();
                 echo "<li class='tracklistRow'>
                     <div class='trackCount'>
-                        <img src='assets/images/icons/play-white.png' alt='Play' class='play' onclick='playThisSong(\"". $albumSong->getId() ."\", tempPlaylist); openPage(\"topTen.php?reloaded=true\");'>
+                        <img src='assets/images/icons/play-white.png' alt='Play' class='play' onclick='playThisSong(\"". $albumSong->getId() ."\", tempPlaylist); openPage(\"topTen.php?\");'>
                         <span class='trackNumber'>$i</span>
                     </div>
 
