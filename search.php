@@ -28,13 +28,13 @@
     });
 </script>
 
-<div class="tracklistContainer borderBottom">
 <?php
 // if nothing is search don't display any result
     if($term==""){
         exit();
     }
 ?>
+<div class="tracklistContainer borderBottom">
     <h2>Songs</h2>
     <ul class="tracklist">
         <?php
