@@ -28,6 +28,9 @@
             <div class="navItem">
                 <span role="link" tabindex="0" onclick="openPage('albumAndSongs.php');" class="navItemLink">All Albums</span>
             </div>
+            <div class="navItem">
+                <span role="link" tabindex="0" onclick="openPage('topTen.php');" class="navItemLink">Top 10 Songs</span>
+            </div>
         </div>
 
     </nav>
