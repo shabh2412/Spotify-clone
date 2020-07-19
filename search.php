@@ -11,12 +11,7 @@
     <h4>
         Search for an Artist, Album, or a Song
     </h4>
-    <input type="text" class="searchInput" value="<?php echo $term;?>" placeholder="Start" onfocus="var val=this.value; this.value=''; this.value= val;">
-    <span
-     class="txt-rotate"
-     data-period="2000"
-     data-rotate='[ "Typing...", "Searching...", "Writing..."]'>
-     </span>
+    <input type="text" class="searchInput" value="<?php echo $term;?>" placeholder="Start Typing..." onfocus="var val=this.value; this.value=''; this.value= val;">
 </div>
 
 <script>
