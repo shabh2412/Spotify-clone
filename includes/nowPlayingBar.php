@@ -143,9 +143,6 @@
             shufflePlaylist = currentPlaylist.slice();
             shuffleArray(shufflePlaylist);
         }
-        if(fromTopTen){
-            openPage('topTen.php');
-        }
         
         if (shuffle == true) {
             currentIndex = shufflePlaylist.indexOf(trackId);
