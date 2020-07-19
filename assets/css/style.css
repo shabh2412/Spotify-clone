@@ -459,3 +459,18 @@ h1{
 input:focus {
     outline: none;
 }
+
+.searchResultRow {
+    padding: 15px 10px;
+}
+
+.searchResultRow:hover {
+    background-color: #282828;
+    font-size: 15px;
+    transition: ease-in-out;
+    transition-duration: 0.5s;
+}
+
+.searchResultRow .artistName span {
+    color: #fff;
+}
