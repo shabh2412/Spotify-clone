@@ -10,6 +10,20 @@
         array_push($TopTenArray,$row['id']);
     }
 ?>
+<div class="entityInfo">
+    <div class="centerSection borderBottom">
+        <div class="artistInfo">
+            <h1 class="artistName">
+                <?php
+                    echo "Top 10 Trending Songs";
+                ?>
+            </h1>
+            <div class="headerButtons">
+                <button class="button green" onclick="playFirstSong()">PLAY</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="tracklistContainer">
     <ul class="tracklist">
