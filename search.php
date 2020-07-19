@@ -15,7 +15,6 @@
 </div>
 
 <script>
-    var timer;
     $(".searchInput").focus();
     $(function(){
         $(".searchInput").keyup(function () {
