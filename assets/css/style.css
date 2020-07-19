@@ -391,6 +391,12 @@ body {
 
 }
 
+.songPlays .plays {
+    width: 12%;
+    float: left;
+    text-align: right;
+}
+
 .tracklistRow .trackInfo .trackName {
 
     color: #fff;
