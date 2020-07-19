@@ -475,3 +475,8 @@ input:focus {
 .searchResultRow .artistName span {
     color: #fff;
 }
+
+.noResults {
+    margin: 15px;
+    display: block;
+}
