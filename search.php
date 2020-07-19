@@ -4,6 +4,7 @@
         $term = urldecode($_GET['term']);
     } else {
         $term = "";
+        exit();
     }
 ?>
 
