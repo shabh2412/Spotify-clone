@@ -55,5 +55,9 @@
         {
             return $this->genre;
         }
+        public function getPlays()
+        {
+            return $this->plays;
+        }
     }
 ?>
