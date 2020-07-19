@@ -9,6 +9,13 @@
     while($row = mysqli_fetch_array($top10)){
         array_push($TopTenArray,$row['id']);
     }
+    if(isset($_GET['reloaded'])){
+        $rel = $_GET['reloaded'];
+        if($rel == 'true') {
+            $rel = 'false';
+            echo "<script>openPage('topTen.php?reloaded=false')</script>";
+        }
+    }
 ?>
 <div class="entityInfo">
     <div class="centerSection borderBottom">
