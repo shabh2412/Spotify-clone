@@ -69,7 +69,7 @@
 
 <script>
     function playAndReload(songId, playlistName, page) {
-        setTrack(songId, playlistName, 'true');
         openPage(page);
+        setTrack(songId, playlistName, 'true');
     }
 </script>
