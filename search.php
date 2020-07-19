@@ -29,7 +29,7 @@
 </script>
 
 <div class="tracklistContainer borderBottom">
-    <h2>Trending Songs of this Artist</h2>
+    <h2>Songs</h2>
     <ul class="tracklist">
         <?php
             $songsQuery = mysqli_query($conn, "SELECT id FROM Songs WHERE title LIKE '$term%' LIMIT 10");
