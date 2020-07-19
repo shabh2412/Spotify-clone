@@ -7,6 +7,7 @@ var currentIndex = 0;
 var repeat = false;
 var shuffle = false;
 var userLoggedIn;
+var timer;
 
 // Below code is responsible for changing pages dynamically
 
