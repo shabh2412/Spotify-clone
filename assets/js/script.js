@@ -8,6 +8,7 @@ var repeat = false;
 var shuffle = false;
 var userLoggedIn;
 var timer;
+var fromTopTen = false;
 
 // Below code is responsible for changing pages dynamically
 
