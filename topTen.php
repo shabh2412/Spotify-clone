@@ -34,7 +34,7 @@
                 $albumArtist = $albumSong->getArtist();
                 echo "<li class='tracklistRow'>
                     <div class='trackCount'>
-                        <img src='assets/images/icons/play-white.png' alt='Play' class='play' onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true); openPage(".'topTen.php'.");'>
+                        <img src='assets/images/icons/play-white.png' alt='Play' class='play' onclick='playAndReload(\"". $albumSong->getId() ."\", tempPlaylist, \"topTen.php\");'>
                         <span class='trackNumber'>$i</span>
                     </div>
 
@@ -66,3 +66,10 @@
         </script>
     </ul>
 </div>
+
+<script>
+    function playAndReload(songId, playlistName, page) {
+        setTrack(songId, playlistName, 'true');
+        openPage(page);
+    }
+</script>
