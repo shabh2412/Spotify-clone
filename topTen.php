@@ -14,7 +14,6 @@
 <div class="tracklistContainer">
     <ul class="tracklist">
         <?php
-            $TopTenArray = $album->getSongIds();
             $i = 1;
             foreach($TopTenArray as $songId){
                 $albumSong = new Song($conn, $songId);
