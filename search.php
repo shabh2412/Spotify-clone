@@ -23,7 +23,7 @@
             timer = setTimeout(function() {
                 var val = $(".searchInput").val();
                 openPage("search.php?term=" + val);
-            }, 2000); //wait 2 sec and execute the code.
+            }, 0); //wait 0 sec and execute the code.
         });
     });
 </script>
