@@ -10,6 +10,9 @@
         array_push($TopTenArray,$row['id']);
     }
 ?>
+<script>
+    fromTopTen = true;
+</script>
 <div class="entityInfo">
     <div class="centerSection borderBottom">
         <div class="artistInfo">
@@ -34,7 +37,7 @@
                 $albumArtist = $albumSong->getArtist();
                 echo "<li class='tracklistRow'>
                     <div class='trackCount'>
-                        <img src='assets/images/icons/play-white.png' alt='Play' class='play' onclick='reload(); playAndReload(\"". $albumSong->getId() ."\", tempPlaylist);'>
+                        <img src='assets/images/icons/play-white.png' alt='Play' class='play' onclick='playAndReload(\"". $albumSong->getId() ."\", tempPlaylist); fromTopTen = true;'>
                         <span class='trackNumber'>$i</span>
                     </div>
 
