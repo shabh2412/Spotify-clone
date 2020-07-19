@@ -385,10 +385,15 @@ body {
 
 .tracklistRow .trackDuration {
 
-    width: 12%;
+    width: 2.00143%;
     float: left;
     text-align: right;
 
+}
+.tracklistRow .songPlays {
+    width: 9%;
+    float: left;
+    text-align: center;
 }
 
 .tracklistRow .trackInfo .trackName {

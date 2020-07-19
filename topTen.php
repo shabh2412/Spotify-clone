@@ -34,9 +34,9 @@
                     </div>
 
                     <div class='songPlays'>
-                        <span class='plays'>".$albumSong->getPlays()."</span>
+                        <span class='plays'>".$albumSong->getPlays()." Plays</span>
                     </div>
-                    
+
                     <div class='trackDuration'>
                         <span class='duration'>".$albumSong->getDuration()."</span>
                     </div>
