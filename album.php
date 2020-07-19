@@ -54,6 +54,9 @@
                     <div class='trackDuration'>
                         <span class='duration'>".$albumSong->getDuration()."</span>
                     </div>
+                    <div class='trackDuration'>
+                        <span class='duration'>".$albumSong->getPlays()."</span>
+                    </div>
 
                 </li>";
             $i = $i + 1;
