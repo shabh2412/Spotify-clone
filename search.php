@@ -108,7 +108,7 @@
     <?php 
         $albumQuery = "SELECT * FROM albums WHERE title LIKE '$term%' LIMIT 10";
         $resultAlbumQuery = mysqli_query($conn, $albumQuery);
-        if(mysqli_num_rows($albumQuery) == 0) {
+        if(mysqli_num_rows($resultAlbumQuery) == 0) {
             echo "<span class='noResults'> No Album found matching \"". $term ."\"</span>";
         }
         while($row = mysqli_fetch_array($resultAlbumQuery)) {
