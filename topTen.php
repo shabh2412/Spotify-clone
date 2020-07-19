@@ -14,6 +14,8 @@
         if($rel == 'true') {
             $rel = 'false';
             echo "<script>openPage('topTen.php?reloaded=false')</script>";
+        } else {
+            echo "<script>location.reload();</script>";
         }
     }
 ?>
