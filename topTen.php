@@ -37,7 +37,7 @@
                 $albumArtist = $albumSong->getArtist();
                 echo "<li class='tracklistRow'>
                     <div class='trackCount'>
-                        <img src='assets/images/icons/play-white.png' alt='Play' class='play' onclick='playAndReload(\"". $albumSong->getId() ."\", tempPlaylist);'>
+                        <img src='assets/images/icons/play-white.png' alt='Play' class='play' onclick='playAndReload(\"". $albumSong->getId() ."\", tempPlaylist); reload();'>
                         <span class='trackNumber'>$i</span>
                     </div>
 
