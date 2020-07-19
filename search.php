@@ -34,7 +34,7 @@
         <?php
             $songsQuery = mysqli_query($conn, "SELECT id FROM Songs WHERE title LIKE '$term%' LIMIT 10");
             if(mysqli_num_rows($songsQuery) == 0) {
-                echo "<span class='noResults'> No Songs found matching => \"". $term ."\"</span>" ; 
+                echo "<span class='noResults'> No Songs found matching \"". $term ."\"</span>" ; 
             }
             $songIdArray = array();
             $i = 1;
