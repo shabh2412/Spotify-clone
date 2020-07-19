@@ -53,7 +53,7 @@
 
                     <div class='trackInfo'>
                         <span class='trackName'>".$artistSong->getTitle()."</span>
-                        <span role='link' onclick=\"openPage('artist.php?id= + artist.id + ')\" class='artistName'>".$artistArtist->getName()."</span>
+                        <span role='link' onclick=\"openPage('artist.php?id= + <script> artist.id </script>+ ')\" class='artistName'>".$artistArtist->getName()."</span>
                     </div>
                     
                     <div class='trackOptions'>
