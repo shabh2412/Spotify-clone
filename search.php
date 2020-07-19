@@ -11,7 +11,7 @@
     <h4>
         Search for an Artist, Album, or a Song
     </h4>
-    <input type="text" class="searchInput" value="<?php echo $query;?>" placeholder="Start Typing" onfocus="this.value = this.value">
+    <input type="text" class="searchInput" value="<?php echo $query;?>" placeholder="Start Typing" onfocus="var val=this.value; this.value=''; this.value= val;">
 </div>
 
 <script>
