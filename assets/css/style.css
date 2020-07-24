@@ -258,6 +258,7 @@ body {
 
 .gridViewItem img {
     width: 100%;
+    background: #2ebd59;
 }
 
 .gridViewInfo {
