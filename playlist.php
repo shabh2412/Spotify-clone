@@ -25,6 +25,7 @@
         <p>By <?php echo $playlist->getOwner();?></p>
         <p><?php echo $playlist->getNumberOfSongs();?> Songs</p>
         <button class="button">DELETE PLAYLIST</button>
+        <button class="button green">PLAY</button>
     </div>
 </div>
 
