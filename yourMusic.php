@@ -17,6 +17,9 @@
             echo "<span class='noResults'> You don't have any playlists yet </span>";
         }
         while($row = mysqli_fetch_array($resultPlaylistQuery)) {
+
+            $playlist = new Playlist($conn, $row);
+
             echo "
             <div class='gridViewItem'>
 
@@ -25,7 +28,7 @@
                 </div>
 
                 <div class='gridViewInfo'>
-                    ".$row['name']."
+                    ".$playlist->getName()."
                 </div>
             </div>
             ";
