@@ -26,10 +26,14 @@ function openPage(url) {
 }
 
 function createPlaylist(){
-    var alert = prompt("Please enter a name for your playlist");
-    if(alert!=null){
-        $.post("includes/handlers/ajax/createPlaylist.php",{name: alert, username: userLoggedIn})
-        .done(function(){
+    var popup = prompt("Please enter a name for your playlist");
+    if(popup!=null){
+        $.post("includes/handlers/ajax/createPlaylist.php",{name: popup, username: userLoggedIn})
+        .done(function(error){
+            if(error != null) {
+                alert(error);
+                return;
+            }
             openPage('yourMusic.php');
         });
     }
