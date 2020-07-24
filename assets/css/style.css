@@ -535,8 +535,8 @@ input:focus {
     border: #333;
 }
 
-.item.playlist {
+.optionsMenu select {
     border: none;
-    text-indent: 12px;
     -webkit-appearance: none;
+    -moz-appearance: none;
 }
