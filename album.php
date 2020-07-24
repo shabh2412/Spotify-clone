@@ -23,7 +23,7 @@
                 echo $album->getTitle();
             ?>
         </h2>
-        <span>By <?php echo $artist->getName();?></span>
+        <p role="link" tabindex="0" onclick="openPage('artist.php?id=$artist->getId()')">By <?php echo $artist->getName();?></p>
         <p> <?php echo $album->getNumberOfSongs();?> Songs</p>
     </div>
 </div>
