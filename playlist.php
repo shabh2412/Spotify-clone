@@ -7,9 +7,9 @@
         header("location:index.php");
     }
 
-    $playlist = new Playlist($conn, $playlistId);
+    // $playlist = new Playlist($conn, $playlistId);
 
-    $owner = new User($conn,$playlist->getOwner());
+    // $owner = new User($conn,$playlist->getOwner());
 
 ?>
 
