@@ -252,6 +252,7 @@ body {
     position: relative;
     border-radius: 8px;
     isolation: isolate;
+    left: 6%;
 
 }
 
