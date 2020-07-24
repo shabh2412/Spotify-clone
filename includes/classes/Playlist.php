@@ -5,6 +5,11 @@
         private $name;
         private $owner;
         public function __construct($conn, $data){
+            if(!is_array($data)) {
+                // data is an id {String}
+                $query = mysqli_query($conn, "SELECT * FROM playlists WHERE id = '$data'");
+                $data = mysqli_fetch_array($query);
+            }
             $this->conn = $conn;
             $this->id = $data['id'];
             $this->name = $data['name'];
