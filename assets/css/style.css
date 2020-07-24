@@ -510,7 +510,7 @@ input:focus {
 
 .optionsMenu {
     position: fixed;
-    background-color: #282828;
+    background-color: #2ebd59;
     width: 200px;
     border: 1px solid rgba(0,0,0,0.15);
     border-radius: 4px;
@@ -526,9 +526,17 @@ input:focus {
     color: rgba(147,147,147, 0.8);
     cursor: pointer;
     height: 40px;
+    background-color: #3e3e3e;
+    font-size: 14px;
 }
 .optionsMenu .item:hover {
     background-color: #181818;
     color: #fff;
     border: #333;
+}
+
+.item.playlist {
+    border: none;
+    text-indent: 12px;
+    -webkit-appearance: none;
 }
