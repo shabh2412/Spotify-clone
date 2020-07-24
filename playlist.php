@@ -4,7 +4,10 @@
         $playlistId = $_POST['id'];
         echo "<script>console.log('$playlistId')</script>";
     } else {
-        header("location:index.php");
+        // header("location:index.php");
+        $playlistId = $_GET['id'];
+        echo "<script>console.log('$playlistId')</script>";
+        
     }
 
     $playlist = new Playlist($conn, $playlistId);
