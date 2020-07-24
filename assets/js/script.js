@@ -10,6 +10,13 @@ var userLoggedIn;
 var timer;
 var fromTopTen = false;
 
+$(document).click(function(click){
+    target = $(click.target);
+    if(!target.hasClass("item") && !target.hasClass("optionsButton")) {
+        hideOptionsMenu();
+    }
+})
+
 $(window).scroll(function() {
     hideOptionsMenu();
 });
