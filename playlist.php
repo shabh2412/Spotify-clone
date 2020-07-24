@@ -1,15 +1,15 @@
 <?php include("includes/includedFiles.php");
 
-    if(isset($_GET['id'])){
-        $playlistId = $_GET['id'];
+    if(isset($_POST['id'])){
+        $playlistId = $_POST['id'];
         echo "<script>console.log('$playlistId')</script>";
     } else {
         header("location:index.php");
     }
 
-    // $playlist = new Playlist($conn, $playlistId);
+    $playlist = new Playlist($conn, $playlistId);
 
-    // $owner = new User($conn,$playlist->getOwner());
+    $owner = new User($conn,$playlist->getOwner());
 
 ?>
 
