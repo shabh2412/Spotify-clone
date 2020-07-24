@@ -10,6 +10,7 @@
             $userLoggedIn = new User($conn, $_GET['userLoggedIn']);
         } else {
             echo "Username variable was not passed into page.";
+            exit();
         }
     } else {
         include("includes/header.php");

@@ -4,30 +4,28 @@
 
 <div class="playlistsContainer">
     <div class="gridViewContainer">
-        <h2>Playlists</h2>
+        <h2>PLAYLISTS</h2>
         <div class="buttonItems">
-            <button class="button green" onclick="createPlaylist();">NEW PLAYLIST</button>
+            <button class="button green" onclick="createPlaylist()">NEW PLAYLIST</button>
         </div>
-        <?php 
-            $username = $userLoggedIn->getUsername();
-            $playlistsQuery = "SELECT * FROM playlists WHERE owner = '$username'";
-            $resultplaylistsQuery = mysqli_query($conn, $playlistsQuery);
-            if(mysqli_num_rows($resultplaylistsQuery) == 0) {
-                echo "<span class='noResults'>You don't have any playlist yet</span>";
-            }
-            while($row = mysqli_fetch_array($resultplaylistsQuery)) {
-                $playlist = new Playlist($conn,$row);
-                echo "
-                <div class='gridViewItem' role='link' tabindex='0' onclick='openPage(\"playlist.php?id=" . $playlist->getId() . "\")'>
-                    <div class='playlistImage'>
-                        <img src='assets/images/icons/playlist.png' alt='playlist-icon'>
-                    </div>
-                    <div class='gridViewInfo'>
-                        ".$playlist->getName()."
-                    </div>
+
+        <?php
+        $username = $userLoggedIn->getUsername();
+        $playlistQuery = "SELECT * FROM playlists WHERE owner = '$username'";
+        $resultPlaylistQuery = mysqli_query($conn, $playlistQuery);
+        if(mysqli_num_rows($resultPlaylistQuery) == 0) {
+            echo "<span class='noResults'> You don't have any playlists yet </span>";
+        }
+        while($row = mysqli_fetch_array($resultPlaylistQuery)) {
+            echo "
+            <div class='gridViewItem'>
+                <div class='gridViewInfo'>
+                    ".$row['name']."
                 </div>
-                ";
-            }
+            </div>
+            ";
+        }
         ?>
+
     </div>
 </div>
