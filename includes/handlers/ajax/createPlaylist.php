@@ -7,6 +7,5 @@
         $query = mysqli_query($conn, "INSERT INTO playlists VALUES ('', '$name', '$username', '$date')");
     } else {
         echo "Name or Username Parameters not passed into file";
-        exit();
     }
 ?>
