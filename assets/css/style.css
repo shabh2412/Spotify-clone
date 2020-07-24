@@ -518,11 +518,9 @@ input:focus {
     color: rgba(147,147,147, 0.8);
     cursor: pointer;
     height: 40px;
-    cursor: pointer;
 }
 .optionsMenu .item:hover {
     background-color: #181818;
     color: #fff;
     border: #333;
-    cursor: pointer;
 }

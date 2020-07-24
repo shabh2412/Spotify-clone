@@ -48,7 +48,7 @@
                     </div>
                     
                     <div class='trackOptions'>
-                        <img src='assets/images/icons/more.png' alt='More Info' class='optionsButton' onmouseover='showOptionsMenu(this)'>
+                        <img src='assets/images/icons/more.png' alt='More Info' class='optionsButton' role='link' onmouseover='showOptionsMenu(this)'>
                     </div>
 
                     <div class='trackDuration'>
