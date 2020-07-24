@@ -19,7 +19,7 @@
                 echo "
                 <div class='gridViewItem'>
                     <div class='gridViewInfo'>
-                    ".$row['name']."
+                        ".$row['name']."
                     </div>
                 </div>
                 ";
