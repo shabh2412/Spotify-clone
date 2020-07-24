@@ -27,7 +27,7 @@ function openPage(url) {
 
 function createPlaylist(){
     var popup = prompt("Please enter a name for your playlist");
-    if(popup!=null){
+    if(popup!=""){
         $.post("includes/handlers/ajax/createPlaylist.php",{name: popup, username: userLoggedIn})
         .done(function(error){
             if(error != "") {
@@ -36,13 +36,22 @@ function createPlaylist(){
             }
             openPage('yourMusic.php');
         });
+    } else {
+        createPlaylist();
     }
 }
 
 function deletePlaylist(playlistId) {
     var prompt = confirm("Do you want to delete your playlist?");
     if (prompt) {
-        console.log("DELETE PLAYLIST");
+        $.post("includes/handlers/ajax/deletePlaylist.php",{playlistId: playlistId})
+        .done(function(error){
+            if(error != "") {
+                alert(error);
+                return;
+            }
+            openPage('yourMusic.php');
+        });
     } else {
         console.log("DON'T DELETE");
     }
