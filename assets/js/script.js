@@ -28,7 +28,7 @@ function openPage(url) {
 function createPlaylist(){
     var popup = prompt("Please enter a name for your playlist");
     if(popup!=null){
-        $.post("includes/handlers/ajax/createPlaylist.php",{names: popup, username: userLoggedIn})
+        $.post("includes/handlers/ajax/createPlaylist.php",{name: popup, username: userLoggedIn})
         .done(function(error){
             if(error != null) {
                 alert(error);
