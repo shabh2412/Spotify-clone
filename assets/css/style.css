@@ -509,3 +509,13 @@ input:focus {
     z-index: 1000;
     display: none;
 }
+
+.optionsMenu .item {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    font-weight: 400;
+    color: rgba(147,147,147, 0.8);
+    cursor: pointer;
+    height: 40px;
+}
