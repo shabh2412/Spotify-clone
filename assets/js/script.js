@@ -37,7 +37,7 @@ function createPlaylist(){
             openPage('yourMusic.php');
         });
     } else {
-        createPlaylist();
+        return;
     }
 }
 
