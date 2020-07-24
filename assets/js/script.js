@@ -39,6 +39,15 @@ function createPlaylist(){
     }
 }
 
+function deletePlaylist(playlistId) {
+    var prompt = confirm("Do you want to delete your playlist?");
+    if (prompt) {
+        console.log("DELETE PLAYLIST");
+    } else {
+        console.log("DON'T DELETE");
+    }
+}
+
 function formatTime(seconds){
     var time = Math.round(seconds);
     var minutes = Math.floor(time/60); //rounds down
