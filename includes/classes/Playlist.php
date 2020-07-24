@@ -31,5 +31,15 @@
             $query = mysqli_query($this->conn, "SELECT songId FROM playlistSongs WHERE playlistId = '$this->id'");
             return mysqli_num_rows($query);
         }
+        public function getSongIds()
+        {
+            $query = "SELECT songId FROM playlistSongs WHERE playlistId = '$this->id' ORDER BY playlistOrder ASC";
+            $queryResult = mysqli_query($this->conn, $query);
+            $array = array();
+            while($row = mysqli_fetch_array($queryResult)){
+                array_push($array,$row['songId']);
+            }
+            return $array;
+        }
     }
 ?>
