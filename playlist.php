@@ -14,7 +14,9 @@
 
 <div class="entityInfo">
     <div class="leftSection">
-        <img src="assets/images/icons/playlist.png" alt="">
+        <div class="playlistImage">
+            <img src="assets/images/icons/playlist.png" alt="">
+        </div>
     </div>
     <div class="rightSection">
         <h2>
