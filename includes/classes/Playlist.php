@@ -22,5 +22,9 @@
         {
             return $this->id;
         }
+        public function getNumberOfSongs(){
+            $query = mysqli_query($this->conn, "SELECT songId FROM playlistSongs WHERE playlistId = '$this->id'");
+            return mysqli_num_rows($query);
+        }
     }
 ?>
