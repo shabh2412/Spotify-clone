@@ -523,4 +523,5 @@ input:focus {
     background-color: #181818;
     color: #fff;
     border: #333;
+    cursor: pointer;
 }
