@@ -10,6 +10,10 @@ var userLoggedIn;
 var timer;
 var fromTopTen = false;
 
+$(window).scroll(function() {
+    hideOptionsMenu();
+});
+
 // Below code is responsible for changing pages dynamically
 
 function openPage(url) {
@@ -53,6 +57,13 @@ function showOptionsMenu(button) {
         "left":left +"px",
         "display": "inline"
     });
+}
+
+function hideOptionsMenu() {
+    var menu = $(".optionsMenu");
+    if(menu.css("display") != "none"){
+        menu.css("display", "none");
+    }
 }
 
 function deletePlaylist(playlistId) {
