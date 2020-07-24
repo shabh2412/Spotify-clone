@@ -519,3 +519,8 @@ input:focus {
     cursor: pointer;
     height: 40px;
 }
+.optionsMenu .item:hover {
+    background-color: #181818;
+    color: #fff;
+    border: #333;
+}
