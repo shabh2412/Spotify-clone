@@ -2,7 +2,7 @@
 
     if(isset($_GET['id'])){
         $playlistId = $_GET['id'];
-
+        echo "<script>console.log('$playlistId')</script>";
     } else {
         header("location:index.php");
     }
