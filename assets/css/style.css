@@ -499,3 +499,13 @@ input:focus {
     border: 3px solid #2ebd59;
     padding: 10px;
 }
+
+.optionsMenu {
+    position: fixed;
+    background-color: #282828;
+    width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    z-index: 1000;
+    display: none;
+}
