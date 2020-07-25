@@ -21,6 +21,14 @@ $(window).scroll(function() {
     hideOptionsMenu();
 });
 
+$(document).on("change", "select.playlist", function(){
+    var playlistId = $(this).val();
+    var songId = $(this).prev(".songId").val();
+
+    console.log("playlistId : " + playlistId);
+    console.log("songId : " + songId);
+});
+
 // Below code is responsible for changing pages dynamically
 
 function openPage(url) {
