@@ -59,7 +59,7 @@ function createPlaylist(){
         return;
     }
 }
-
+// code to show optionsMenu
 function showOptionsMenu(button) {
     var menu = $(".optionsMenu");
     var menuWidth = menu.width();
