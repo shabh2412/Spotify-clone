@@ -74,4 +74,5 @@
 <nav class="optionsMenu">
     <input type="hidden" class="songId">
     <?php echo Playlist::getPlaylistDropdown($conn,$userLoggedIn->getUsername())?>
+    <div class="item" onclick="removeFromPlaylist(this, '<?php echo $playlistId?>');">Remove From Playlist</div>
 </nav>
