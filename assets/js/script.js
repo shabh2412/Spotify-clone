@@ -61,8 +61,10 @@ function createPlaylist(){
 }
 // code to show optionsMenu
 function showOptionsMenu(button) {
+    var songId = $(button).prevAll(".songId").val(); //takes value from the ancestor element which has the class of songId
     var menu = $(".optionsMenu");
     var menuWidth = menu.width();
+    menu.find(".songId").val(songId);
     var scrollTop = $(window).scrollTop(); // distance from top of window to top of your document
     var elementOffset = $(button).offset().top; //distance from the top of the document
     var top = elementOffset - scrollTop;
