@@ -44,7 +44,8 @@
                     </div>
                     
                     <div class='trackOptions'>
-                        <img src='assets/images/icons/more.png' alt='More Info' class='optionsButton'>
+                        <input type='hidden' class='songId' value= '". $albumSong->getId()."'>
+                        <img src='assets/images/icons/more.png' alt='More Info' class='optionsButton' role='link' onclick='showOptionsMenu(this)'>
                     </div>
 
                     <div class='songPlays'>
@@ -66,6 +67,11 @@
         </script>
     </ul>
 </div>
+
+<nav class="optionsMenu">
+    <input type="hidden" class="songId">
+    <?php echo Playlist::getPlaylistDropdown($conn,$userLoggedIn->getUsername())?>
+</nav>
 
 <script>
     function playThisSong(songId, playlistName) {
