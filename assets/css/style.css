@@ -559,3 +559,14 @@ input:focus {
     display: block;
     margin: 16px auto;
 }
+
+.userDetails .content input[type="text"],
+.userDetails .content input[type="password"]{
+    height: 50px;
+    width: 100%;
+    background-color: #1f1f1f;
+    border: none;
+    font-size: 18px;
+    font-weight: 300px;
+    padding: 0 20px;
+}
