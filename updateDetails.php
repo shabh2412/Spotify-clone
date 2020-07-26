@@ -7,7 +7,7 @@
         <h2>EMAIL</h2>
         <input type="text" class="email" name="email" placeholder="Type your new email address here..." value="<?php echo $userLoggedIn->getEmail();?>">
         <span class="message"></span>
-        <button class="button" onclick="">UPDATE EMAIL</button>
+        <button class="button" onclick="updateEmail('email')">UPDATE EMAIL</button>
     </div>
     <div class="container">
         <h2>PASSWORD</h2>

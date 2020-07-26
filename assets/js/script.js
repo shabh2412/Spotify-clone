@@ -46,6 +46,16 @@ function logout() {
     });
 }
 
+// code to update email
+function updateEmail(emailClass) {
+    var emailValue = $("." + emailClass).val();
+
+    $.post("includes/handlers/ajax/updateEmail.php", {email : emailValue, username: userLoggedIn}).done(function(responnse){
+        $(".emailClass").nextUntil(".message").text(responnse);
+    });
+
+}
+
 // Below code is responsible for changing pages dynamically
 
 function openPage(url) {
