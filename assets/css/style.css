@@ -544,3 +544,18 @@ input:focus {
 .userInfo h1 {
     text-align: center;
 }
+
+.userDetails {
+    padding: 20px;
+}
+
+.userDetails .container h2{
+    text-align: center;
+}
+
+.userDetails .container input[type="text"],
+.userDetails .container input[type="password"],
+.userDetails .container .button{
+    display: block;
+    margin: 16px auto;
+}
