@@ -8,4 +8,8 @@
             <h1><?php echo "Hi ". $userLoggedIn->getFirstAndLastName() . "!";?></h1>
         </div>
     </div>
+    <div class="buttonItems">
+        <button class="button">Your Details</button>
+        <button class="button">Logout</button>
+    </div>
 </div>
