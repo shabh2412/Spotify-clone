@@ -10,6 +10,6 @@
     </div>
     <div class="buttonItems">
         <button class="button" onclick="openPage('updateDetails.php')">Your Details</button>
-        <button class="button">Logout</button>
+        <button class="button" onclick="logout()">Logout</button>
     </div>
 </div>
