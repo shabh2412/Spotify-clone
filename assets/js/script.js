@@ -39,6 +39,13 @@ $(document).on("change", "select.playlist", function(){
     // console.log("songId : " + songId);
 });
 
+// code to logout
+function logout() {
+    $.post("includes/handlers/ajax/logout.php", function () {
+        location.reload();
+    });
+}
+
 // Below code is responsible for changing pages dynamically
 
 function openPage(url) {
