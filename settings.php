@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="buttonItems">
-        <button class="button">Your Details</button>
+        <button class="button" onclick="openPage('updateDetails.php')">Your Details</button>
         <button class="button">Logout</button>
     </div>
 </div>
