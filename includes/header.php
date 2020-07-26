@@ -1,11 +1,13 @@
 <?php
-    include("includes/config.php");
+    include("includes/classes/User.php");
     include("includes/classes/Artist.php");
     include("includes/classes/Album.php");
     include("includes/classes/Song.php");
+    include("includes/classes/Playlist.php");
     if(isset($_SESSION['userLoggedIn'])){
-        $userLoggedIn = $_SESSION['userLoggedIn'];
-        echo "<script>userLoggedIn = '$userLoggedIn';</script>";
+        $userLoggedIn = new User($conn, $_SESSION['userLoggedIn']);
+        $uName = $userLoggedIn->getUsername();
+        echo "<script>userLoggedIn = '$uName';</script>";
         if(time() - $_SESSION['loginTime'] > 3600) {
             session_destroy();
             header('location: register.php');
