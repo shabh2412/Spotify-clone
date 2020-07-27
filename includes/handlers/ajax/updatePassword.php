@@ -12,10 +12,24 @@
         echo "Please fill in all fields!";
         exit();
     }
-    $username = $_POST['username'];
-    $oldPassword = $_POST['oldPassword'];
-    $newPassword1 = $_POST['newPassword1'];
-    $newPassword2 = $_POST['newPassword2'];
+    // code to protect from XSS-Attacks
+    function purifyPassword($x){
+        $x = stripslashes($x);
+        $x = strip_tags($x);
+        return $x;
+    }
+    function purifyUsername($x){
+        $x = strip_tags($x);
+        $x = str_replace(' ',"", $x);
+        $x = stripslashes($x);
+        $x = strtolower($x);
+        return $x;
+    }
+    $username = purifyUsername($_POST['username']);
+    $oldPassword = purifyPassword($_POST['oldPassword']);
+    $newPassword1 = purifyPassword($_POST['newPassword1']);
+    $newPassword2 = purifyPassword($_POST['newPassword2']);
+    
     if($newPassword1 == $oldPassword) {
         echo "Sorry, Old Password and New Password cannot be the same!";
         exit();
