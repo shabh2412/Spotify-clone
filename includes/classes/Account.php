@@ -46,6 +46,7 @@
         }
         
         private function insertUserDetails($userName, $firstName, $lastName, $email, $password) {
+            $email = strtolower($email);
             $encryptedPassWord = md5($password);
             $profilePic = "assets/images/profile-pics/basic-prof-pic.png";
             $date = date("Y-m-d");

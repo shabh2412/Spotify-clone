@@ -21,6 +21,7 @@
             $this->genre = $this->mysqliData['genre'];
             $this->duration = $this->mysqliData['duration'];
             $this->path = $this->mysqliData['path'];
+            $this->plays = $this->mysqliData['plays'];
         }
         
         public function getTitle()
@@ -54,6 +55,10 @@
         public function getGenre()
         {
             return $this->genre;
+        }
+        public function getPlays()
+        {
+            return $this->plays;
         }
     }
 ?>

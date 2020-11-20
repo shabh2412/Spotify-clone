@@ -1,4 +1,4 @@
-<?php include("includes/header.php");
+<?php include("includes/includedFiles.php");
 
     if(isset($_GET['id'])){
         $albumId = $_GET['id'];
@@ -23,7 +23,7 @@
                 echo $album->getTitle();
             ?>
         </h2>
-        <span>By <?php echo $artist->getName();?></span>
+        <p role="link" tabindex="0" onclick="openPage('artist.php?id=<?php echo $artist->getId()?>')">By <?php echo $artist->getName();?></p>
         <p> <?php echo $album->getNumberOfSongs();?> Songs</p>
     </div>
 </div>
@@ -38,7 +38,7 @@
                 $albumArtist = $albumSong->getArtist();
                 echo "<li class='tracklistRow'>
                     <div class='trackCount'>
-                        <img src='assets/images/icons/play-white.png' alt='Play' class='play'>
+                        <img src='assets/images/icons/play-white.png' alt='Play' class='play' onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true)'>
                         <span class='trackNumber'>$i</span>
                     </div>
 
@@ -48,7 +48,8 @@
                     </div>
                     
                     <div class='trackOptions'>
-                        <img src='assets/images/icons/more.png' alt='More Info' class='optionsButton'>
+                        <input type='hidden' class='songId' value= '". $albumSong->getId()."'>
+                        <img src='assets/images/icons/more.png' alt='More Info' class='optionsButton' role='link' onclick='showOptionsMenu(this)'>
                     </div>
 
                     <div class='trackDuration'>
@@ -59,12 +60,15 @@
             $i = $i + 1;
             }
         ?>
+        <script>
+            var tempSongIds = '<?php echo json_encode($songIdArray); ?>';
+            tempPlaylist = JSON.parse(tempSongIds);
+            // console.log("The Id's -> ",tempPlaylist);  //For testing the playlist
+        </script>
     </ul>
 </div>
 
-
-
-
-
-
-<?php include("includes/footer.php")?>
+<nav class="optionsMenu">
+    <input type="hidden" class="songId">
+    <?php echo Playlist::getPlaylistDropdown($conn,$userLoggedIn->getUsername())?>
+</nav>

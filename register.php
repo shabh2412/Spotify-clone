@@ -66,6 +66,9 @@
 
                     <div class="hasAccountText">
                         <span id="hideLogin">Don't have an account yet? Signup Here</span>
+                        <br>
+                        <br>
+                        <span id="hideLogin"> <a href="forgotPassword.php">Forgot Password?</a></span>
                     </div>
                     
                 </form>
@@ -106,7 +109,7 @@
                         <label for="Password">Password</label>
                         <input type="password" name="Password" id="Password" placeholder= "Your Password" required>
                         <p></p>
-                        <span>Must contain Upper and lowercase, $ or !, and a Numeric Character. Min Length: 8 characters</span>
+                        <span>Must contain Upper and lowercase, ? or !, and a Numeric Character. Min Length: 8 characters</span>
                     </p>
                     <p>
                         <label for="Password-conf">Confirm Password</label>

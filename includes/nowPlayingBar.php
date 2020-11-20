@@ -1,6 +1,7 @@
 <?php 
 // PHP Code for selecting 10 songs at Random. 
-    $songQuery = "SELECT id FROM Songs ORDER BY RAND() LIMIT 10";
+    $songQuery = "SELECT id FROM Songs ORDER BY plays DESC LIMIT 10";
+    // $songQuery = "SELECT id FROM Songs ORDER BY RAND() LIMIT 10";
     // $songQuery = "SELECT id from Songs where album = 7";
     $songQueryResult = mysqli_query($conn, $songQuery);
     $resultArray = array();
@@ -96,7 +97,7 @@
         var trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
         setTrack(trackToPlay, currentPlaylist, true);
     }
-
+    
     function setRepeat() {
         repeat = !repeat;
         var imageName = repeat ? "repeat-active.png" : "repeat.png";
@@ -160,20 +161,22 @@
             $.post("includes/handlers/ajax/getArtistJson.php", {artistId : track.artist}, function(data) {
                 var artist = JSON.parse(data);
                 // console.log(artist);
-                $(".artistName span").text(artist.name);
+                $(".trackInfo .artistName span").text(artist.name);
+                $(".trackInfo .artistName span").attr("onclick", "openPage('artist.php?id=" + artist.id + "')");
             });
             $.post("includes/handlers/ajax/getAlbumJson.php", {albumId : track.album}, function(data) {
                 var album = JSON.parse(data);
-                console.log(album);
+                // console.log(album);  // for testing purpose
                 $("#nowPlayingLeft .content .albumLink img").attr("src",album.artworkPath);
+                $(".content .albumLink img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
+                $(".trackInfo .trackName span").attr("onclick", "openPage('album.php?id=" + album.id + "')");
             });
 
             audioElement.setTrack(track);
-            playSong();
+            if(play){
+                playSong();
+            }
         });
-        if(play){
-            audioElement.play();
-        }
         
     }
 
@@ -202,16 +205,16 @@
         <div id="nowPlayingLeft" >
             <div class="content">
                 <span class="albumLink">
-                    <img src="" alt="" class="albumArtwork">
+                    <img role="link" tabindex="0" src="" alt="" class="albumArtwork">
                 </span>
 
                 <div class="trackInfo">
                     <span class="trackName">
-                        <span></span>
+                        <span role="link" tabindex="0"></span>
                     </span>
 
                     <span class="artistName">
-                        <span></span>
+                        <span role="link" tabindex="0"></span>
                     </span>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-<?php include("includes/header.php"); //including required files. 
+<?php include("includes/includedFiles.php"); //including required files. 
 
     //DB connection code starts here 
     ob_start();
@@ -56,5 +56,4 @@
             }
         }
     }
-    include('includes/footer.php'); //this has the code for playing bar at the bottom of the screen. 
 ?>
